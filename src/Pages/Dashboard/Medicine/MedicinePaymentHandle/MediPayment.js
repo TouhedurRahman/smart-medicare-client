@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 const MediPayment = () => {
     const [order, setOrder] = useState([]);
@@ -10,6 +11,7 @@ const MediPayment = () => {
             })
             .catch(error => {
                 // setError(error.message)
+                toast.error(<h1>{error.message}</h1>)
             })
     }, [])
     const onSubmit = (e) => {
