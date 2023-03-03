@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const MediOrder = () => {
+    const {user} = useContext(AuthContext)
     const [order, setOrder] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/medicine/init`)
+        axios.get(`http://localhost:5000/api/v1/medicine/init/${user?.email}`)
             .then(response => {
                 setOrder(response.data.result)
             })

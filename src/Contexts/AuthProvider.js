@@ -40,6 +40,7 @@ const AuthProvider = ({ children }) => {
   const logOut = () => {
     signOut(auth).then(() => {
       setUser({})
+      window.location.reload()
     }).catch((error) => {
       // An error happened.
     });

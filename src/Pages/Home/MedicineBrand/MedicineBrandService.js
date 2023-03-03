@@ -5,7 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MedicineBrandService = () => {
-  const { state, dispatch } = useContext(AuthContext)
+  const { state, dispatch ,user} = useContext(AuthContext)
   const { result } = useLoaderData();
   let [value, setValue] = useState("");
   let [medicine, setMedicine] = useState([]);
@@ -33,7 +33,8 @@ const MedicineBrandService = () => {
       city: city,
       name: name,
       price: price,
-      id: item?._id
+      id: item?._id,
+      email:user?.email
     })
       .then(res => {
         console.log(res)

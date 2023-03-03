@@ -23,9 +23,7 @@ const Login = () => {
         signIn(userData)
         .then(result => {
             const user = result.user;
-             
             setLoginUserEmail(user.email);
-             
                 navigate(from, { replace: true });
             
         })

@@ -8,7 +8,7 @@ function App() {
   return (
     <div  >
       <Toaster />
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}> </RouterProvider>
     </div>
   );
 }

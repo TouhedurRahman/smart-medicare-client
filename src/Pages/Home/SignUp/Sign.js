@@ -12,7 +12,7 @@ const Sign = () => {
   const [createdUserEmail, setCreatedUserEmail] = useState('')
   const [token] = useToken(createdUserEmail);
 
-  // const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/';
   const signUpValue = e => {
     const field = e.target.name;
     const value = e.target.value;

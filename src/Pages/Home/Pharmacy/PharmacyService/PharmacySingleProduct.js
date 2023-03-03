@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const PharmacySingleProduct = ({ item }) => {
-    const { state, dispatch } = useContext(AuthContext)
+    const { state, dispatch,user } = useContext(AuthContext)
     const [phone, setPhone] = useState("")
     const [name, setName] = useState("")
     const [city, setCity] = useState("")
@@ -16,7 +16,8 @@ const PharmacySingleProduct = ({ item }) => {
             city: city,
             name: name,
             price: price,
-            id: item?._id
+            id: item?._id,
+            email:user?.email
         })
             .then(res => {
 

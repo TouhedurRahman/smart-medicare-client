@@ -25,7 +25,8 @@ const DoctorAppointment = () => {
         specialist: result.specialist,
         doctorId:result._id,
         visitTime:result.visitTime,
-        chamber:result.chamber
+        chamber:result.chamber,
+      
     })
     let date = (new Date(selected));
     date = date.setDate(date.getDate());

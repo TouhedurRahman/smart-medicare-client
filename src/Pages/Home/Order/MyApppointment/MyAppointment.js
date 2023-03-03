@@ -20,7 +20,7 @@ const MyAppointment = () => {
             })
             .catch(error => {
                 // setError(error.message)
-                toast.error(<h1>  {error?.response?.data?.error}</h1>);
+                toast.error(<h1>  {error?.message}</h1>);
             })
     }, [user?.email])
 
