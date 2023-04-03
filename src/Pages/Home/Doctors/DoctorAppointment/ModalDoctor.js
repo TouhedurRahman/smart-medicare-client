@@ -32,14 +32,14 @@ const ModalDoctor = (props) => {
                                 type="text"
                                 placeholder='Patient Name'
                                 onChange={e => setPatient(e.target.value)}
-                                className="input input-bordered my-2 text-center"
+                                className="text-center rounded-xl"
                                 required
                             />
                             <input
                                 type="phone"
                                 placeholder='Phone Number'
                                 onChange={e => setPhone(e.target.value)}
-                                className="input input-bordered my-2 text-center"
+                                className="text-center rounded-xl"
                                 required
                             />
                         </form>

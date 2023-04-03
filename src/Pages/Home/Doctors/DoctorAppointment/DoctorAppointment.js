@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format, setDate } from 'date-fns';
 import 'react-day-picker/dist/style.css';
@@ -105,11 +105,16 @@ const DoctorAppointment = () => {
                                     <p className='p-0 m-0'>{result.specialist}</p>
                                     <p>{result?.chamber}</p>
                                     <p>{result?.visitTime}</p>
-                                    <p>{result.fee}BDT/-</p>
+                                    <p>{result.fee} BDT/-</p>
                                 </div>
                                 <div className="card-actions justify-end">
                                     {/* this is mae n */}
-                                    <ModalDoctor data={data} setData={setData} handleErrorSuccess={handleErrorSuccess} handleOnSubmit={handleOnSubmit} />
+                                    <ModalDoctor
+                                        data={data}
+                                        setData={setData}
+                                        handleErrorSuccess={handleErrorSuccess}
+                                        handleOnSubmit={handleOnSubmit}
+                                    />
                                 </div>
                             </div>
                         </div>
