@@ -4,11 +4,10 @@ import './App.css';
 import router from './Routes/Routes/Route';
 
 function App() {
-
   return (
     <div  >
-      <Toaster />
       <RouterProvider router={router}> </RouterProvider>
+      <Toaster />
     </div>
   );
 }
