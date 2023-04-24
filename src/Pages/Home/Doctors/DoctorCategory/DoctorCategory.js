@@ -23,6 +23,7 @@ const DoctorCategory = () => {
                 !pathname.includes('/doctors/category/control')
                 &&
                 <h3
+                    className='italic text-2xl text-[#0299f0fa] font-bold'
                     style={{ textAlign: "left", margin: "12px 0px 12px 0px", borderBottom: "#0299f0fa 3px solid" }}
                 >
                     Doctor Category

@@ -1,20 +1,17 @@
-import axios from 'axios';
-import React, { useState } from 'react';
 import AmbulanceServices from '../Ambulance/AmbulanceService/AmbulanceServices';
 import Banner from '../Banner/Banner';
-import Donate from '../Blood/Donate';
+import DonarHome from '../Blood/DonarHome';
 import DoctorCategory from '../Doctors/DoctorCategory/DoctorCategory';
 import MedicineBrand from '../MedicineBrand/MedicineBrand';
- 
+
 const Home = () => {
-       return (
+    return (
         <div>
-             
-            <Banner/>
-            <DoctorCategory/>
-            <MedicineBrand/>
-            <Donate/>
-            <AmbulanceServices/>
+            <Banner />
+            <DoctorCategory />
+            <MedicineBrand />
+            <DonarHome />
+            <AmbulanceServices />
         </div>
     );
 };
