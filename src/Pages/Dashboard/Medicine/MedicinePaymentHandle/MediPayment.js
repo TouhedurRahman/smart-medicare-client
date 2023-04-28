@@ -4,27 +4,25 @@ import { toast } from 'react-hot-toast';
 
 const MediPayment = () => {
     const [order, setOrder] = useState([]);
+
     useEffect(() => {
         axios.get(`http://localhost:5000/api/v1/medicine/init`)
             .then(response => {
-                setOrder(response.data.result)
+                setOrder(response.data.result);
             })
             .catch(error => {
-                // setError(error.message)
-                toast.error(<h1>{error.message}</h1>)
+                toast.error(`${error.message}`)
             })
-    }, [])
+    }, []);
+
     const onSubmit = (e) => {
         axios.patch(`http://localhost:5000/api/v1/medicine/init/${e}`)
-            .then(res => {
-
-            })
-            .catch(err => {
-
-            })
+            .then(res => { })
+            .catch(err => { })
     }
+
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto max-h-500 overflow-y-auto'>
             <div className='grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-3 gap-4'>
                 {
                     order.map((item) => <div className="bg-white rounded-lg shadow-md p-4">
@@ -34,7 +32,13 @@ const MediPayment = () => {
                         <p className="mt-2 text-gray-600">payment status : {item?.payment}</p>
                         <p className="mt-2 text-gray-600">cus city : {item?.cus_city}</p>
                         <p>deliver : {item?.status}</p>
-                        <button onClick={() => onSubmit(item?._id)}> {item.status === "deliver" ? "deliver" : "pending"} </button>
+                        <button
+                            onClick={() => onSubmit(item?._id)}
+                        >
+                            {
+                                item.status === "deliver" ? "deliver" : "pending"
+                            }
+                        </button>
                     </div>)
                 }
             </div>
