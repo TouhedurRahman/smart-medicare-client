@@ -93,7 +93,7 @@ const ProductCart = () => {
                                     </div>
 
                                     <div className="modal-action">
-                                        <label htmlFor="my-modal" className="btn rounded-xl w-full" onClick={() => medicinePay()}>Medicine Order</label>
+                                        <label htmlFor="my-modal" className="btn rounded-xl w-full" onClick={() => medicinePay(item)}>Medicine Order</label>
                                     </div>
                                 </div>
                             </div>
