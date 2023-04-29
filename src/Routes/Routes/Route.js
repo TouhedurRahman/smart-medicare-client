@@ -1,6 +1,5 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import TopAppointment from '../../Components/Extra/TopAppointment';
 import DasboardLayout from '../../Layout/DasboardLayout';
 import Main from '../../Layout/Main';
 import AddDoctor from '../../Pages/Dashboard/DoctorHandle/AddDoctor/AddDoctor';
@@ -18,7 +17,6 @@ import BloodHome from '../../Pages/Home/Blood/BloodHome';
 import BloodRegister from '../../Pages/Home/Blood/BloodRegister';
 import DoctorAppointment from '../../Pages/Home/Doctors/DoctorAppointment/DoctorAppointment';
 import DoctorCategory from '../../Pages/Home/Doctors/DoctorCategory/DoctorCategory';
-import DoctorSIngleCatetgory from '../../Pages/Home/Doctors/DoctorCategory/DoctorSIngleCatetgory';
 import DoctorServices from '../../Pages/Home/Doctors/DoctorService/DoctorServices';
 import FeedBack from '../../Pages/Home/Feedback/FeedBack';
 import Home from '../../Pages/Home/Home/Home';
@@ -36,6 +34,7 @@ import EditDoctor from '../../Pages/Dashboard/DoctorHandle/EditDoctor/EditDoctor
 import MediOrder from '../../Pages/Home/Order/MedicineOrder/MediOrder';
 import MediPayment from '../../Pages/Dashboard/Medicine/MedicinePaymentHandle/MediPayment';
 import MakeAdmin from '../../Pages/Dashboard/MakeAdmin/MakeAdmin';
+import Overview from '../../Components/Overview/Overview';
 
 const router = createBrowserRouter([
     {
@@ -121,8 +120,8 @@ const router = createBrowserRouter([
                 element: <FeedBack />
             },
             {
-                path: 'top/appointment',
-                element: <TopAppointment />
+                path: '/overview',
+                element: <Overview />
             },
             {
                 path: '/dashboard',
