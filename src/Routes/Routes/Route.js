@@ -35,6 +35,7 @@ import MediOrder from '../../Pages/Home/Order/MedicineOrder/MediOrder';
 import MediPayment from '../../Pages/Dashboard/Medicine/MedicinePaymentHandle/MediPayment';
 import MakeAdmin from '../../Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Overview from '../../Components/Overview/Overview';
+import ConfirmAppointment from '../../Pages/Dashboard/ConfirmAppointment/ConfirmAppointment';
 
 const router = createBrowserRouter([
     {
@@ -177,9 +178,13 @@ const router = createBrowserRouter([
                         element: <MakeAdmin />
                     },
                     {
+                        path: '/dashboard/paid/confirmAppointment',
+                        element: <ConfirmAppointment />
+                    },
+                    {
                         path: '/dashboard/medi/pay',
                         element: <MediPayment />
-                    },
+                    }
                 ]
             }
         ]
