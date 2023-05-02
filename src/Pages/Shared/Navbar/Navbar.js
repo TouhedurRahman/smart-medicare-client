@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
+import { FaUserCircle } from 'react-icons/fa';
+import { MdOutlineLogout } from 'react-icons/md';
 
 const Navbar = () => {
-  const { token, user, state, logOut, userProfile } = useContext(AuthContext)
+  const { user, state, logOut, userProfile } = useContext(AuthContext)
   const [isAdmin] = useAdmin(user?.email);
 
   const menuItems = <React.Fragment>
@@ -14,10 +16,10 @@ const Navbar = () => {
       user?.email
       &&
       <li tabIndex={0}>
-        <a className="justify-between ">
+        <Link className="justify-between ">
           Order
           <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-        </a>
+        </Link>
         <ul className="p-2 z-50 bg-[#0e7490]">
           <li>
             <Link to="/doctor/myappointment/control">MyAppointment</Link>
@@ -29,10 +31,10 @@ const Navbar = () => {
       </li>
     }
     <li tabIndex={0}>
-      <a className="justify-between ">
+      <Link className="justify-between ">
         Emergency
         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </a>
+      </Link>
       <ul className="p-1 z-50 bg-[#0e7490]">
         <li><Link to="/donate/blood">Blood</Link></li>
         <li><Link to="/ambulance/show-up">Ambulance</Link></li>
@@ -61,16 +63,6 @@ const Navbar = () => {
         Overview
       </Link>
     </li>
-
-    {/* <li tabIndex={0}>
-      <a className="justify-between">
-        Extra
-        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </a>
-      <ul className="p-1 z-50 bg-[#0e7490]">
-        <li><Link to="/top/appointment">Top Appointment</Link></li>
-      </ul>
-    </li> */}
   </React.Fragment>
 
   return (
@@ -117,7 +109,6 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            {/* end of card  */}
             {
               user?.email
                 ?
@@ -129,28 +120,26 @@ const Navbar = () => {
                           ?
                           <img src={userProfile?.pic} alt="Loading..." />
                           :
-                          <img src="https://placeimg.com/80/80/people" alt='Loading...' />
+                          <img src="https://i.ibb.co/6r3zmMg/user.jpg" alt='Loading...' />
                       }
                     </div>
                   </label>
-                  <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                  <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 bg-[#0e7490] text-white font-bold rounded-box w-52">
                     <li>
-                      <Link to="user/profile" className="justify-between">
-                        Profile
+                      <Link to="user/profile">
+                        <FaUserCircle /><>Profile</>
                       </Link>
                     </li>
                     <li>
-                      <a>
-                        <button onClick={logOut}>
-                          Logout
-                        </button>
-                      </a>
+                      <Link onClick={logOut}>
+                        <MdOutlineLogout /><>Logout</>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 :
                 <li>
-                  <Link to="/user/login">
+                  <Link to="/user/login" className='text-white font-bold'>
                     Login
                   </Link>
                 </li>

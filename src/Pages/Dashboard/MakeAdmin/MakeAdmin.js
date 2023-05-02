@@ -87,7 +87,17 @@ const MakeAdmin = () => {
                                     <td>
                                         <div className="avatar">
                                             <div className="w-10 rounded-full">
-                                                <img src={allUser.pic} alt='User...' />
+                                                <img
+                                                    src=
+                                                    {
+                                                        allUser.pic
+                                                            ?
+                                                            allUser.pic
+                                                            :
+                                                            'https://i.ibb.co/6r3zmMg/user.jpg'
+
+                                                    }
+                                                    alt='User...' />
                                             </div>
                                         </div>
                                     </td>
