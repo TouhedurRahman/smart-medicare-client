@@ -74,7 +74,7 @@ const Navbar = () => {
   </React.Fragment>
 
   return (
-    <div className='bg-[#0e7490] '>
+    <div className='bg-[#0e7490] text-white font-bold'>
       <div className='container mx-auto static'>
         <div className="navbar">
           <div className="navbar-start">

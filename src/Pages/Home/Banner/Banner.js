@@ -19,16 +19,23 @@ const Banner = () => {
                             </i>
                         </h5>
                     </div>
-                    <p className="py-6 pr-2 text-justify">
+                    <p className="py-6 pr-2 text-justify text-black">
                         Welcome to our one-stop healthcare platform where you can easily schedule appointments with doctors, purchase medication from our online pharmacy, find a blood donor, and quickly call an ambulance in case of emergencies. Our user-friendly website is designed to provide convenient and accessible healthcare services to everyone.
                     </p>
-                    <label htmlFor="my-modal-3" className="btn bg-gradient-to-r from-primary to-secondary text-white">Know More</label >
-                    <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                    <label htmlFor="banner-modal" className="btn bg-gradient-to-r from-primary to-secondary text-white">Learn More</label >
+                    <input type="checkbox" id="banner-modal" className="modal-toggle" />
                     <div className="modal">
                         <div className="modal-box">
-                            <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                            <label htmlFor="banner-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                             <h3 className="text-lg font-bold">Welcome to Smart MediCare!</h3>
-                            <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                            <p className="py-4 text-justify">
+                                "স্মার্ট মেডিকেয়ার" এ আপনাকে স্বাগতম - যেখানে আমরা আপনার স্বাস্থ্য যত্ন নিয়ে তুলতে সমর্থ। ডাক্তারের অ্যাপয়েন্টমেন্ট, অনলাইন ফার্মেসি সেবা, রক্তদান সেবা এবং এম্বুলেন্স সেবা - আপনার সব সেবার জন্য আমরা একটি একত্র স্থান তৈরি করেছি। <br></br><br></br>
+                                আমাদের ওয়েবসাইটে অনলাইন ফার্মেসি সেবা পাওয়া যায়, যাতে আপনি আপনার পছন্দমত ঔষধ সহজেই অর্ডার করতে পারেন এবং সম্পূর্ণ হোম ডেলিভারি পেতে পারেন। আপনি সিঙ্গেল প্ল্যাটফর্ম থেকে সমস্ত স্বাস্থ্যসেবা উপভোগ করতে পারেন। <br></br> <br></br>
+                                আমাদের ওয়েবসাইট নিরাপদ এবং স্বচ্ছ পরিবেশে সেবা প্রদান করে। একবার লগ ইন করে পছন্দমত সেবাটি নিন। সমস্ত সেবা একই সাথে পাওয়া যায়, যা আপনার জীবনকে সহজ ও সুখী করবে। <br></br> <br></br>
+                            </p>
+                            <p className="text-center">
+                                "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
+                            </p>
                         </div>
                     </div>
                 </div>
