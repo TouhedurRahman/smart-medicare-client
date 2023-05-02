@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DoctorSIngleCatetgory = ({ doctorCategory }) => {
     return (
-        <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  gap-4'>
+        <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4'>
             {
                 doctorCategory.map((item, index) => <Link
                     to={`/doctors/category/${item?.category}`}
@@ -14,7 +14,7 @@ const DoctorSIngleCatetgory = ({ doctorCategory }) => {
                             <img src={item?.img} alt="Avatar" className="category-image w-full" />
                             <div className="category-overlay">
                             </div>
-                            <div className="category-text  ">
+                            <div className="category-text">
                                 <img src={item?.img} alt="Avatar" />
                             </div>
                         </div>

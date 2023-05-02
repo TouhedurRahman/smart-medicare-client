@@ -5,8 +5,8 @@ const DonarHomeCard = ({ donar }) => {
 
     return (
         <div className="rounded shadow-lg">
-            <div className="card shadow-xl">
-                <figure className="px-10 pt-10">
+            <div className="shadow-xl">
+                <figure className="grid justify-center content-center px-10 pt-10">
                     <img src={file} alt="Blood_Donar" className="rounded-xl" style={{ height: "200px", width: "200px" }} />
                 </figure>
                 <div className="card-body items-center text-center">
