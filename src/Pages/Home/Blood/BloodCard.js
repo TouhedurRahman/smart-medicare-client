@@ -25,7 +25,9 @@ const BloodCard = ({ donar, setStatus }) => {
                         {firstName} {lastName}
                     </p>
                     <p className="text-sm text-gray-500 truncate dark:text-gray-400 mt-[5px] mx-[5px]">
-                        {gender}
+                        {
+                            gender === 'male' ? "Male" : "Female"
+                        }
                     </p>
                     <p className="text-sm text-gray-500 truncate dark:text-gray-400 mt-[5px] mx-[5px]">
                         {phone}

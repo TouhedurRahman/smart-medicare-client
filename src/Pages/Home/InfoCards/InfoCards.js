@@ -23,7 +23,7 @@ const InfoCards = () => {
         {
             id: 3,
             name: 'Contuct US',
-            description: '01839432144 | smartmedicare@gmail.com',
+            description: '+880 1839-432144 smartmedicare@gmail.com',
             icon: phone,
             bgClass: 'bg-gradient-to-r from-primary to-secondary text-white'
         }
