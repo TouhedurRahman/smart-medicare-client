@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
 
 const OurResources = () => {
     const [doctors, setDoctors] = useState([]);
@@ -41,13 +42,13 @@ const OurResources = () => {
                     <figure><img src="https://i.ibb.co/XkmTkrF/doctors.jpg" alt="Doctors..." /></figure>
                     <div className="card-body grid justify-center content-center">
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
-                            {
-                                `${doctors.length}` < 10
-                                    ?
-                                    `0${doctors.length}`
-                                    :
-                                    `${doctors.length}`
-                            }
+                            <CountUp
+                                end={doctors.length}
+                                duration={2}
+                                separator=","
+                                className="font-bold text-center"
+                                style={{ fontSize: "100px" }}
+                            />
                         </h2>
                         <p className='text-4xl font-bold text-center'>Doctors</p>
                     </div>
@@ -56,13 +57,13 @@ const OurResources = () => {
                     <figure><img src="https://i.ibb.co/18HD1pv/medicines.jpg" alt="Medicines..." /></figure>
                     <div className="card-body grid justify-center content-center">
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
-                            {
-                                `${medicines}` < 10
-                                    ?
-                                    `0${medicines}`
-                                    :
-                                    `${medicines}`
-                            }
+                            <CountUp
+                                end={medicines}
+                                duration={2}
+                                separator=","
+                                className="font-bold text-center"
+                                style={{ fontSize: "100px" }}
+                            />
                         </h2>
                         <p className='text-4xl font-bold text-center'>Medicines</p>
                     </div>
@@ -71,13 +72,13 @@ const OurResources = () => {
                     <figure><img src="https://i.ibb.co/5xbkmjX/blood-donation.jpg" alt="Blood Donars..." /></figure>
                     <div className="card-body grid justify-center content-center">
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
-                            {
-                                `${bloodDonars.length}` < 10
-                                    ?
-                                    `0${bloodDonars.length}`
-                                    :
-                                    `${bloodDonars.length}`
-                            }
+                            <CountUp
+                                end={bloodDonars.length}
+                                duration={2}
+                                separator=","
+                                className="font-bold text-center"
+                                style={{ fontSize: "100px" }}
+                            />
                         </h2>
                         <p className='text-4xl font-bold text-center'>Blood Donars</p>
                     </div>
@@ -86,13 +87,13 @@ const OurResources = () => {
                     <figure><img src="https://i.ibb.co/r22NMnv/ambulance-hospital.webp" alt="Ambulances..." /></figure>
                     <div className="card-body grid justify-center content-center">
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
-                            {
-                                `${ambulances.length}` < 10
-                                    ?
-                                    `0${ambulances.length}`
-                                    :
-                                    `${ambulances.length}`
-                            }
+                            <CountUp
+                                end={ambulances.length}
+                                duration={2}
+                                separator=","
+                                className="font-bold text-center"
+                                style={{ fontSize: "100px" }}
+                            />
                         </h2>
                         <p className='text-4xl font-bold text-center'>Ambulances</p>
                     </div>
