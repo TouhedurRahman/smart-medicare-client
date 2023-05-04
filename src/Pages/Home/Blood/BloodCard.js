@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useLocation } from 'react-router';
+import { MdBloodtype } from 'react-icons/md';
 
 const BloodCard = ({ donar, setStatus }) => {
     const { firstName, lastName, bloodGroup, gender, status, _id, file, phone, location } = donar;
@@ -15,7 +16,7 @@ const BloodCard = ({ donar, setStatus }) => {
     }
 
     return (
-        <li className="pt-3 pb-0 pt-9">
+        <li className="pt-3 pb-5">
             <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
                     <img className="w-8 h-8 rounded-full" src={file} alt="Blood Donar" />
@@ -36,8 +37,8 @@ const BloodCard = ({ donar, setStatus }) => {
                         {location}
                     </p>
                 </div>
-                <div className="fle items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <p>  Group : {bloodGroup}</p>
+                <div className="items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <p className='flex justify-end items-center'>{bloodGroup}<MdBloodtype className='text-[red] ml-1' /></p>
                     {
                         !pathname.includes('/dashboard/blood/donar')
                             ?
