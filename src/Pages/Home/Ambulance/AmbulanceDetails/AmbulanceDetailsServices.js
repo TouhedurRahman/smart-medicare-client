@@ -69,7 +69,7 @@ const AmbulanceDetailsServices = () => {
                         className="card bg-base-100 shadow-xl"
                     >
                         <figure className="px-10 pt-10">
-                            <img src={ambulanceData.img} alt="Shoes" className="rounded-xl shadow-xl" m style={{ height: "200px", width: "250px" }} />
+                            <img src={ambulanceData.img} alt="Shoes" className="rounded-xl shadow-xl" style={{ height: "200px", width: "250px" }} />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{ambulanceData.location}</h2>
