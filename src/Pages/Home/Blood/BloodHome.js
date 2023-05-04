@@ -7,8 +7,8 @@ const BloodHome = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <div className='w-full h-10 bg-[#3E0404] text-white text-4xl font-bold flex justify-center items-center rounded'>
-                <Marquee className='text-white text-xl font-bold'>
+            <div className='w-full h-10 bg-[red] text-white text-4xl font-bold flex justify-center items-center rounded'>
+                <Marquee className='text-[yellow] text-xl font-bold' speed={60}>
                     <span className='text-xl mr-1'>
                         *** আপনি যদি স্বেচ্ছায় রক্তদান করতে প্রস্তুত থাকুন তাহলে এখনি রেজিষ্ট্রেশন করুন, এবং আপনি ইতিমদ্ধ্যে রক্তদান সম্পন্ন করলে আমাদের এডমিন প্যানেল এ জানিয়ে দিবেন।
                     </span>
