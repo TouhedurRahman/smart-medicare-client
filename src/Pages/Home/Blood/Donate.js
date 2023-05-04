@@ -45,22 +45,19 @@ const Donate = () => {
 
     return (
         <div className='container mx-auto'>
-            {
-                /* <div>
-                    {
-                        !pathname.includes('/dashboard/blood/donar') && !pathname.includes('/donate/blood') && <h3 style={{ textAlign: "left", margin: "12px 0px 12px 0px", borderBottom: "#0299f0fa 3px solid" }}>Blood</h3>
-                    }
-                </div> */
-            }
             <div className='flex justify-center items-center overflow-auto  '>
                 {
                     !pathname.includes('/dashboard/blood/donar')
                     &&
                     <div className='flex flex-col w-full max-w-xs'>
                         <label className='mb-3' htmlFor='bloodRange'>
-                            Blood Group
+                            <h3 className='text-3xl text-center text-[#0E7490] font-bold mb-5'>
+                                <i>
+                                    Blood Group_
+                                </i>
+                            </h3>
                         </label>
-                        <select id='bloodRange' onClick={groupSearch}>
+                        <select id='bloodRange' onClick={groupSearch} className='h-10 bg-[#D3D3D3] text-xl text-center rounded-full border-[black]'>
                             {
                                 bloodGroup.map((category, index) => (<option
                                     value={category}

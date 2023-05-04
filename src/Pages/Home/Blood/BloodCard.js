@@ -39,9 +39,15 @@ const BloodCard = ({ donar, setStatus }) => {
                     {
                         !pathname.includes('/dashboard/blood/donar')
                             ?
-                            status === "inactive" && <div>
-                                <h1>he donate few month ago</h1>
-                            </div>
+                            status === "inactive"
+                                ?
+                                <div>
+                                    <h1 className='text-[red]'>Donated few days ago</h1>
+                                </div>
+                                :
+                                <div>
+                                    <h1 className='text-[green]'>Ready to Donate</h1>
+                                </div>
                             :
                             ""
                     }
