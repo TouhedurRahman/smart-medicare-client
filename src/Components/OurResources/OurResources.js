@@ -44,7 +44,7 @@ const OurResources = () => {
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
                             <CountUp
                                 end={doctors.length}
-                                duration={2}
+                                duration={3}
                                 separator=","
                                 className="font-bold text-center"
                                 style={{ fontSize: "100px" }}
@@ -59,7 +59,7 @@ const OurResources = () => {
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
                             <CountUp
                                 end={medicines}
-                                duration={2}
+                                duration={3}
                                 separator=","
                                 className="font-bold text-center"
                                 style={{ fontSize: "100px" }}
@@ -74,7 +74,7 @@ const OurResources = () => {
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
                             <CountUp
                                 end={bloodDonars.length}
-                                duration={2}
+                                duration={3}
                                 separator=","
                                 className="font-bold text-center"
                                 style={{ fontSize: "100px" }}
@@ -89,7 +89,7 @@ const OurResources = () => {
                         <h2 className="font-bold text-center" style={{ fontSize: "100px" }}>
                             <CountUp
                                 end={ambulances.length}
-                                duration={2}
+                                duration={3}
                                 separator=","
                                 className="font-bold text-center"
                                 style={{ fontSize: "100px" }}
