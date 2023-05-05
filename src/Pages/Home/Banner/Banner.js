@@ -4,12 +4,12 @@ import Marquee from "react-fast-marquee";
 const Banner = () => {
     return (
         <div>
-            <div className='w-full h-10 bg-[red] text-white text-4xl font-bold flex justify-center items-center rounded'>
-                <Marquee className='text-white text-xl font-bold' speed={60}>
-                    <span className='text-xl text-[yellow] mr-1'>
+            <div className='w-full h-10 bg-[#6B0707] text-white text-4xl font-bold flex justify-center items-center rounded'>
+                <Marquee className='text-[white] text-xl font-bold' speed={60}>
+                    <span className='text-xl mr-1'>
                         *** "স্মার্ট মেডিকেয়ার" এ আপনাকে স্বাগতম - যেখানে আপনি পাচ্ছেন অভিজ্ঞ ডাক্তারের অ্যাপয়েন্টমেন্ট, অনলাইন ফার্মেসি সেবা, রক্তদান সেবা এবং এম্বুলেন্স সেবা।
                     </span>
-                    <span className='text-xl text-[yellow]' style={{ marginRight: "1000px" }}>
+                    <span className='text-xl' style={{ marginRight: "1000px" }}>
                         "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত। **
                     </span>
                 </Marquee>
