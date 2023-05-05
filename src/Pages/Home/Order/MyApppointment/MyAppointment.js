@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import Marquee from "react-fast-marquee";
 import { MdOutlinePayment } from 'react-icons/md';
 import { AiFillDelete } from 'react-icons/ai';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
@@ -72,6 +73,16 @@ const MyAppointment = () => {
                 (appointment.length) > 0
                     ?
                     <div>
+                        <div className='w-full h-10 bg-[red] text-white text-4xl font-bold flex justify-center items-center rounded'>
+                            <Marquee className='text-white text-xl font-bold' speed={60}>
+                                <span className='text-xl text-[yellow] mr-1'>
+                                    *** ডাক্তারের অ্যাপয়েন্টমেন্ট নেওয়ার জন্য আপনাকে অবশ্যই পেমেন্ট সম্পন্ন করতে হবে, অন্যথায় অ্যাপয়েন্টমেন্ট গ্রহণ করা হবে না।
+                                </span>
+                                <span className='text-xl text-[yellow]' style={{ marginRight: "1000px" }}>
+                                    সুতরাং, অ্যাপয়েন্টমেন্ট নিতে অবশ্যই পেমেন্ট সম্পন্ন করুন, ধন্যবাদ। **
+                                </span>
+                            </Marquee>
+                        </div>
                         <div>
                             <h3 className='text-3xl text-center text-[#0E7490] font-bold m-5'>
                                 <i>
