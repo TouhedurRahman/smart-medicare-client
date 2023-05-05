@@ -57,11 +57,10 @@ const BloodCard = ({ donar, setStatus }) => {
                     {
                         pathname === '/dashboard/blood/donar'
                         &&
-                        <div>
-                            {/* <p>{bloodGroup}</p> */}
-                            <label>status : {status}</label>
+                        <div className='w-full grid justify-center items-center'>
+                            <label className='flex justify-center items-center'>{status === 'active' ? 'Active' : "Inactive"}</label>
                             <input
-                                className='mr-3'
+                                className='ml-1 mr-3 flex justify-center items-center'
                                 type='checkbox'
                                 checked={status === 'active' ? true : false}
                                 value={status === "active" ? 'inactive' : 'active'}
