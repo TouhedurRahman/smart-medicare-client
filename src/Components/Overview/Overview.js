@@ -1,12 +1,14 @@
 import React from 'react';
-import TopAppointment from '../TopAppointment/TopAppointment';
 import OurResources from '../OurResources/OurResources';
+import TopAppointment from '../TopAppointment/TopAppointment';
+import OverviewPaymentMethods from '../OverviewPaymentMethods/OverviewPaymentMethods';
 
 const Overview = () => {
     return (
         <div>
             <OurResources />
             <TopAppointment />
+            <OverviewPaymentMethods />
         </div>
     );
 };
