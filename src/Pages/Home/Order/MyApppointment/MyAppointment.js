@@ -7,6 +7,8 @@ import { AuthContext } from '../../../../Contexts/AuthProvider';
 import Rating from 'react-rating';
 import { toast } from 'react-hot-toast';
 import { BsCheckCircleFill } from 'react-icons/bs';
+import { GrView } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 
 const MyAppointment = () => {
     const [appointment, setAppointment] = useState([]);
@@ -79,7 +81,7 @@ const MyAppointment = () => {
                                     *** ডাক্তারের অ্যাপয়েন্টমেন্ট নেওয়ার জন্য আপনাকে অবশ্যই পেমেন্ট সম্পন্ন করতে হবে, অন্যথায় অ্যাপয়েন্টমেন্ট গ্রহণ করা হবে না।
                                 </span>
                                 <span className='text-xl' style={{ marginRight: "1000px" }}>
-                                    সুতরাং, অ্যাপয়েন্টমেন্ট নিতে অবশ্যই পেমেন্ট সম্পন্ন করুন, ধন্যবাদ। **
+                                    সুতরাং, অ্যাপয়েন্টমেন্ট নিতে অবশ্যই পেমেন্ট সম্পন্ন করুন এবং ভিউ অপশনে ক্লিক করে আপনার রিসিট-টি অবশ্যই প্রিন্ট করে নিন, ধন্যবাদ। **
                                 </span>
                             </Marquee>
                         </div>
@@ -104,6 +106,7 @@ const MyAppointment = () => {
                                             <th className='text-center'>Ratings</th>
                                             <th className='text-center'>Payment</th>
                                             <th className='text-center'>Delete</th>
+                                            <th className='text-center'>View</th>
 
                                         </tr>
                                     </thead>
@@ -182,6 +185,13 @@ const MyAppointment = () => {
                                                         <button title="delete" className="btn btn-ghost" onClick={() => deleteAppointment(appointment._id)}>
                                                             < AiFillDelete size={22} />
                                                         </button>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="flex justify-center items-center text-[green]">
+                                                        <Link to={`/dr/appointment/print/receipt/${appointment._id}`}>
+                                                            <GrView className='text-[green]' size={22} />
+                                                        </Link>
                                                     </div>
                                                 </td>
                                             </tr>)

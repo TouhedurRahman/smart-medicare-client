@@ -10,8 +10,8 @@ import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const DoctorAppointment = () => {
     const [selected, setSelected] = React.useState();
-    const [error, setError] = useState("")
-    const [success, setSuccess] = useState("")
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
     const { result } = useLoaderData();
     const { user, token } = useContext(AuthContext);
 
@@ -37,23 +37,23 @@ const DoctorAppointment = () => {
     const handleOnSubmit = e => {
         const newData = { ...data, userName: user?.name, userEmail: user?.email, date: selected }
 
-        if (newDate.getDay() == 5) {
-            setError("FRIDAY IS OUR OFF DAY!")
+        if (newDate.getDay() === 5) {
+            setError("FRIDAY IS OUR OFF DAY!");
             return;
         }
 
         if ((new Date()).setDate(new Date().getDate() + 1) > date) {
-            setError(" INVALID DATE PLEASE SELECTED NEXT 2 DAY!")
+            setError(" INVALID DATE PLEASE SELECTED NEXT 2 DAY!");
             return;
         }
 
         if ((new Date()).setDate(new Date().getDate() + 8) < date) {
-            setError(" INVALID DATE PLEASE SELECTED WITH IN SEVEN DAYS")
+            setError(" INVALID DATE PLEASE SELECTED WITH IN SEVEN DAYS");
             return;
         } else {
             axios.post("http://localhost:5000/api/v1/appointment", newData)
                 .then(res => {
-                    setSuccess("SUCCESSFYLLY YOU APPOINTMENT")
+                    setSuccess("YOUR APPOINTMENT IS SUCCESSFUL! PLEASE PAY NOW.");
                 })
                 .catch(error => {
                     setError(error.message)
@@ -67,7 +67,7 @@ const DoctorAppointment = () => {
     }
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto m-5 rounded-2xl'>
             <div>
                 {
                     error
@@ -91,24 +91,24 @@ const DoctorAppointment = () => {
                     </div>
                 }
             </div>
-            <div className="card  lg:card-side bg-base-100 shadow-xl">
-                <div>
-                    <figure><img className='w-full h-80' src={result?.imgUrl} alt="Album" /></figure>
+            <div className="card  lg:card-side shadow-xl">
+                <div className='ml-5 my-auto rounded-lg'>
+                    <figure><img className='w-90 h-80' src={result?.imgUrl} alt="Loading..." /></figure>
                 </div>
                 <div className="card-body">
                     <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-4'>
-                        <div className="card   ">
+                        <div className="card my-auto">
                             <div className="card-body">
-                                <h2 className="card-title">{result.name}</h2>
+                                <h2 className="text-3xl font-bold">{result.name}</h2>
                                 <div>
                                     <p className='pb-0 p-0'>{result.qualification}</p>
                                     <p className='p-0 m-0'>{result.specialist}</p>
+                                    <p>{result?.experience}</p>
                                     <p>{result?.chamber}</p>
                                     <p>{result?.visitTime}</p>
-                                    <p>{result.fee} BDT/-</p>
+                                    <p>Visiting Fee ৳ {result.fee}/-</p>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    {/* this is mae n */}
                                     <ModalDoctor
                                         data={data}
                                         setData={setData}
@@ -118,7 +118,7 @@ const DoctorAppointment = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className='mx-auto my-auto'>
                             <DayPicker
                                 mode="single"
                                 selected={selected}

@@ -16,7 +16,7 @@ const ModalDoctor = (props) => {
         <>
             <label
                 htmlFor="my-modal-6"
-                className="btn"
+                className="btn bg-[#0E7490]"
                 onClick={() => handleErrorSuccess("")}
             >
                 Appointment

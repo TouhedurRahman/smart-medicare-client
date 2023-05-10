@@ -36,6 +36,7 @@ import MediPayment from '../../Pages/Dashboard/Medicine/MedicinePaymentHandle/Me
 import MakeAdmin from '../../Pages/Dashboard/MakeAdmin/MakeAdmin';
 import Overview from '../../Components/Overview/Overview';
 import ConfirmAppointment from '../../Pages/Dashboard/ConfirmAppointment/ConfirmAppointment';
+import PrintAppointmentReceipt from '../../Pages/Home/Order/PrintAppointmentReceipt/PrintAppointmentReceipt';
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                element: <Home />
+            },
+            {
+                path: '/home',
                 element: <Home />
             },
             {
@@ -67,6 +72,11 @@ const router = createBrowserRouter([
             {
                 path: 'doctor/myappointment/control',
                 element: <PrivateRoute><MyAppointment /></PrivateRoute>
+            },
+            {
+                path: 'dr/appointment/print/receipt/:id',
+                element: <PrivateRoute><PrintAppointmentReceipt /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/appointment/${params.id}`)
             },
             {
                 path: 'medicine/myappointment/control',
