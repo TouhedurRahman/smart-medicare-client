@@ -25,7 +25,7 @@ const PrintAppointmentReceipt = () => {
                 <div>
                     <h3 className='text-5xl text-center text-[#0E7490] font-bold m-5'>
                         <i>
-                            Smart Medicare_
+                            Smart MediCare_
                             <span>
                                 "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
                             </span>
@@ -37,9 +37,8 @@ const PrintAppointmentReceipt = () => {
                     <div className="w-full flex flex-col justify-between lg:flex-row-reverse mt-5 p-5">
                         <div className='flex justify-center items-center'>
                             <img
-                                src="https://i.ibb.co/hMzCMgW/medical-logo.jpg"
-                                className="rounded-lg shadow-2xl"
-                                style={{ width: '200px', height: '150px' }}
+                                src="https://i.ibb.co/nRV6HKM/doctor-cartoon.png"
+                                style={{ width: '170px', height: '150px' }}
                                 alt='Loading...'
                             />
                         </div>
@@ -83,17 +82,29 @@ const PrintAppointmentReceipt = () => {
                 <hr></hr>
                 <div className='flex mt-5 mb-5' style={{ height: "1100px" }}>
                     <div className='border border-right' style={{ width: '330px' }}>
-                        <p className='mt-3 mb-2 text-center text-[gray] italic text-2xl'>
+                        <p className='mt-3 mb-2 text-center text-[gray] italic text-2xl font-bold'>
                             Chief Complaints With Duration
+                        </p>
+                        <div className='text-center w-1/2 mx-auto'>
+                            <hr className='mx-auto'></hr>
+                        </div>
+                        <p className='mb-2 text-center text-[gray] italic text-2xl font-bold' style={{ marginTop: "550px" }}>
+                            Required Tests
                         </p>
                         <div className='text-center w-1/2 mx-auto'>
                             <hr className='mx-auto'></hr>
                         </div>
                     </div>
                     <div>
-                        <p className='m-5 text-[gray] font-bold  italic text-2xl'>
+                        <p className='m-5 text-[gray] font-bold  italic text-3xl'>
                             Rx.
                         </p>
+                        <img
+                            src="https://i.ibb.co/ryysCM8/paid-logo.png"
+                            className="relative"
+                            style={{ width: '150px', height: '150px', marginTop: "-160px", marginLeft: "970px" }}
+                            alt='Loading...'
+                        />
                     </div>
                 </div>
                 <div className='w-full text-2xl mt-5 flex justify-between items-center'>
@@ -107,14 +118,14 @@ const PrintAppointmentReceipt = () => {
                             ...................................................
                         </p>
                         < p className='font-bold'>
-                            Doctor Signature
+                            Doctor's Signature
                         </p>
                     </div>
                 </div>
                 <div className='bg-[#D2E7F7] p-5 rounded-lg' style={{ marginTop: "80px" }}>
                     <div className='mt-5 flex justify-between items-center'>
-                        <p className='text-3xl font-bold'>
-                            Smart MediCare
+                        <p className='text-3xl font-bold italic'>
+                            Smart MediCare_
                         </p>
                         <p className='flex justify-between items-center font-bold'>
                             <TfiHeadphoneAlt className='mr-1' />+880 1839-432144

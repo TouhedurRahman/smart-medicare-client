@@ -1,21 +1,24 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router';
-// import {FaChevronLeft } from 'react-icons/fa'
+
 const BloodRegister = () => {
   const { register, handleSubmit, control, reset } = useForm();
   const term = useWatch({ control, name: "term" })
   const navigate = useNavigate();
+
+  const formData = new FormData();
+  const [file, setFile] = useState(null);
+
   const bloodGroup = [
     'selected', 'A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-'
   ];
-  const formData = new FormData();
-  const [file, setFile] = useState(null);
+
   const handleUpload = e => {
     setFile(e.target.files[0]);
   }
+
   const onSubmit = async (data) => {
     formData.append("firstName", data?.firstName);
     formData.append("lastName", data?.lastName);
@@ -32,16 +35,15 @@ const BloodRegister = () => {
         body: formData,
       });
       const data = await res.json();
-      console.log(data)
       if (data.message.includes("successfull")) {
-        toast.success(<h1>donar added success</h1>)
+        toast.success("Your registration is successfull! Thank you.");
       }
     } catch (err) {
-      toast.error(<h1>{err.message}</h1>)
+      toast.error(`${err.message}`)
     }
     // reset()
-
   }
+
   return (
     <div className='pt-14' >
       <div className='flex justify-center items-center'>
@@ -73,7 +75,7 @@ const BloodRegister = () => {
           </div>
           <div className='flex flex-col w-full max-w-xs'>
             <label className='mb-2' htmlFor='phone'>
-              Pone
+              Phone
             </label>
             <input type='phone' id='phone'   {...register("phone")} />
           </div>
@@ -119,8 +121,6 @@ const BloodRegister = () => {
                   Other
                 </label>
               </div>
-
-
             </div>
           </div>
           <hr className='w-full mt-2 bg-black' />
