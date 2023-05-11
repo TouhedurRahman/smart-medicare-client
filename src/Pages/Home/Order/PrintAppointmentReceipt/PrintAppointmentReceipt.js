@@ -81,7 +81,7 @@ const PrintAppointmentReceipt = () => {
                     </div>
                 </div>
                 <hr></hr>
-                <div className='flex mt-5 mb-5' style={{ height: "1200px" }}>
+                <div className='flex mt-5 mb-5' style={{ height: "1100px" }}>
                     <div className='border border-right' style={{ width: '330px' }}>
                         <p className='mt-3 mb-2 text-center text-[gray] italic text-2xl'>
                             Chief Complaints With Duration
