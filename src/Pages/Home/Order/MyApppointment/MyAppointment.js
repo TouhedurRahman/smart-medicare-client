@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import Marquee from "react-fast-marquee";
-import { MdOutlinePayment } from 'react-icons/md';
+import { MdOutlinePayment, MdPending } from 'react-icons/md';
 import { AiFillDelete } from 'react-icons/ai';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 import Rating from 'react-rating';
@@ -188,11 +188,22 @@ const MyAppointment = () => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div className="flex justify-center items-center text-[green]">
-                                                        <Link to={`/dr/appointment/print/receipt/${appointment._id}`}>
-                                                            <GrView className='text-[green]' size={22} />
-                                                        </Link>
-                                                    </div>
+                                                    {
+                                                        (appointment.paymentStatus) === 'paid'
+                                                            ?
+                                                            <div className="flex justify-center items-center text-[green]">
+                                                                <Link
+                                                                    to={`/dr/appointment/print/receipt/${appointment._id}`}
+                                                                    className='text-[green]'
+                                                                >
+                                                                    <GrView className='text-[green]' size={22} />
+                                                                </Link>
+                                                            </div>
+                                                            :
+                                                            <p className='flex justify-center items-center italic text-[red] font-bold'>
+                                                                <MdPending className='mr-1' /><>Pending</>
+                                                            </p>
+                                                    }
                                                 </td>
                                             </tr>)
                                         }

@@ -10,7 +10,7 @@ const Footer = () => {
     const year = today.getFullYear();
 
     return (
-        <div className='footer-container mt-5'>
+        <div className='footer-container mt-5 print:hidden'>
             <div className="footer-details">
                 <div>
                     <p className='text-4xl font-bold'>Smart MediCare</p>
