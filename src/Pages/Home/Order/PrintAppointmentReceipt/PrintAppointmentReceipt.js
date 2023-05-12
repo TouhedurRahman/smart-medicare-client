@@ -20,134 +20,136 @@ const PrintAppointmentReceipt = () => {
                     </span>
                 </Marquee>
             </div>
-            <div>
-                <div style={{ height: "50px" }}></div>
-                <div>
-                    <h3 className='text-5xl text-center text-[#0E7490] font-bold m-5'>
-                        <i>
-                            Smart MediCare_
-                            <span>
-                                "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
-                            </span>
-                        </i>
-                    </h3>
-                </div>
-                <hr></hr>
-                <div className="hero bg-[#D2E7F7] rounded-lg mt-5 mb-5">
-                    <div className="w-full flex flex-col justify-between lg:flex-row-reverse mt-5 p-5">
-                        <div className='flex justify-center items-center'>
+            <div className='mx-auto' style={{ width: '576px' }}>
+                <div style={{ marginLeft: "-130px" }}>
+                    <div>
+                        <h3 className='text-xl text-center text-[#0E7490] font-bold mx-5 my-2'>
+                            <i>
+                                Smart MediCare_<br />
+                                <span>
+                                    "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
+                                </span>
+                            </i>
+                        </h3>
+                    </div>
+                    <hr></hr>
+                    <div className="hero bg-[#D2E7F7] rounded-lg my-3" style={{ border: "1px solid #D2E7F7" }}>
+                        <div className="w-full flex justify-between flex-row-reverse px-5 py-2">
+                            <div className='flex justify-center items-center' style={{ width: '25%', height: '120px' }}>
+                                <img
+                                    src="https://i.ibb.co/nRV6HKM/doctor-cartoon.png"
+                                    style={{ height: '100%' }}
+                                    alt='Loading...'
+                                />
+                            </div>
+                            <div style={{ width: '75%' }}>
+                                <h1 className="text-2xl font-bold">{result.name}</h1>
+                                <p className='text-xl font-bold'>
+                                    Specialist on {result.specialist}
+                                </p>
+                                <p className='text-xs mt-3'>
+                                    Chamber: {result.chamber}
+                                </p>
+                                <p className='text-xs'>
+                                    Appointed Date: {result.date.slice(0, 10)}
+                                </p>
+                                <p className='text-xs'>
+                                    Visiting Time: {result.visitTime}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="overflow-x-auto">
+                            <table className="table w-full my-1" style={{ border: "1px solid #D2E7F7" }}>
+                                <thead style={{ borderBottom: "1px solid #D2E7F7" }}>
+                                    <tr className='text-xs'>
+                                        <th className='text-center' style={{ padding: "0.5rem" }}>Patient Name</th>
+                                        <th className='text-center' style={{ padding: "0.5rem" }}>Mobile No.</th>
+                                        <th className='text-center' style={{ padding: "0.5rem" }}>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className='text-sm font-bold'>
+                                        <td className='text-center' style={{ padding: "0.5rem" }}>{result.patientName}</td>
+                                        <td className='text-center' style={{ padding: "0.5rem" }}>
+                                            +88{result.contactNumber.slice(0, 1)} {result.contactNumber.slice(1, 5)}-{result.contactNumber.slice(5)}
+                                        </td>
+                                        <td className='text-center' style={{ padding: "0.5rem" }}>{result.userEmail}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className='flex mt-5 mb-5' style={{ height: "444px" }}>
+                        <div className='border border-right' style={{ width: '20%' }}>
+                            <p className='mt-3 mb-2 text-center text-[gray] italic text-base font-bold'>
+                                Chief Complaints With Duration
+                            </p>
+                            <div className='text-center w-3/5 mx-auto'>
+                                <hr className='mx-auto'></hr>
+                            </div>
+                            <p className='mb-2 text-center text-[gray] italic text-base font-bold' style={{ marginTop: "188px" }}>
+                                Required Tests
+                            </p>
+                            <div className='text-center w-3/5 mx-auto'>
+                                <hr className='mx-auto'></hr>
+                            </div>
+                        </div>
+                        <div style={{ width: '80%' }}>
+                            <p className='m-5 text-[gray] font-bold  italic text-2xl'>
+                                Rx.
+                            </p>
                             <img
-                                src="https://i.ibb.co/nRV6HKM/doctor-cartoon.png"
-                                style={{ width: '170px', height: '150px' }}
+                                src="https://i.ibb.co/ryysCM8/paid-logo.png"
+                                className="relative opacity-30"
+                                style={{ width: '150px', height: '150px', marginTop: "-140px", marginLeft: "422px" }}
                                 alt='Loading...'
                             />
                         </div>
+                    </div>
+                    <div className='w-full text-base mt-6 flex justify-between items-center'>
                         <div>
-                            <h1 className="text-5xl font-bold">{result.name}</h1>
-                            <p className='text-2xl font-bold'>
-                                Specialist on {result.specialist}
+                            <p className='font-bold'>
+                                Next Follow Up: ................ দিন/মাস পর দেখা করবেন।
                             </p>
-                            <p className='mt-5'>
-                                Chamber: {result.chamber}
+                        </div>
+                        <div className='text-center'>
+                            < p className='font-bold'>
+                                .........................................
                             </p>
-                            <p className=''>
-                                Visiting Date: {result.date}
-                            </p>
-                            <p className=''>
-                                Visiting Time: {result.visitTime}
+                            < p className='font-bold'>
+                                Doctor's Signature
                             </p>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div className="overflow-x-auto">
-                        <table className="table w-full">
-                            <thead>
-                                <tr>
-                                    <th className='text-center'>Patient Name</th>
-                                    <th className='text-center'>Mobile No.</th>
-                                    <th className='text-center'>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th className='text-center'>{result.patientName}</th>
-                                    <td className='text-center'>{result.contactNumber}</td>
-                                    <td className='text-center'>{result.userEmail}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <hr></hr>
-                <div className='flex mt-5 mb-5' style={{ height: "1100px" }}>
-                    <div className='border border-right' style={{ width: '330px' }}>
-                        <p className='mt-3 mb-2 text-center text-[gray] italic text-2xl font-bold'>
-                            Chief Complaints With Duration
-                        </p>
-                        <div className='text-center w-1/2 mx-auto'>
-                            <hr className='mx-auto'></hr>
+                    <div className='bg-[#D2E7F7] px-5 py-2 rounded-lg' style={{ marginTop: "25px", border: "1px solid #D2E7F7" }}>
+                        <div className='flex justify-between items-center'>
+                            <p className='text-xl font-bold italic'>
+                                Smart MediCare_
+                            </p>
+                            <p className='flex justify-between items-center font-bold'>
+                                <TfiHeadphoneAlt className='mr-1' />+880 1839-432144
+                            </p>
+                            <p className='flex justify-between items-center font-bold'>
+                                <MdEmail className='mr-1' />smartmedicare@gmail.com
+                            </p>
                         </div>
-                        <p className='mb-2 text-center text-[gray] italic text-2xl font-bold' style={{ marginTop: "550px" }}>
-                            Required Tests
-                        </p>
-                        <div className='text-center w-1/2 mx-auto'>
-                            <hr className='mx-auto'></hr>
+                        <div className='text-center font-bold mt-3'>
+                            <p>
+                                "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
+                            </p>
                         </div>
                     </div>
-                    <div>
-                        <p className='m-5 text-[gray] font-bold  italic text-3xl'>
-                            Rx.
-                        </p>
-                        <img
-                            src="https://i.ibb.co/ryysCM8/paid-logo.png"
-                            className="relative"
-                            style={{ width: '150px', height: '150px', marginTop: "-160px", marginLeft: "970px" }}
-                            alt='Loading...'
-                        />
+                    <div className='m-5 text-center'>
+                        <button
+                            onClick={() => window.print()}
+                            className="bg-[#0E7490] hover:bg-[#D2E7F7] print:hidden text-xl text-[white] hover:text-[black] transition ease-in-out bt"
+                        >
+                            <div className='flex items-center'><span className='mr-1 text-lg font-bold'>Print</span>< AiFillPrinter /></div>
+                        </button>
                     </div>
                 </div>
-                <div className='w-full text-2xl mt-5 flex justify-between items-center'>
-                    <div>
-                        <p className='font-bold'>
-                            Next Follow Up: ..................... দিন/মাস পর দেখা করবেন।
-                        </p>
-                    </div>
-                    <div className='text-center'>
-                        < p className='font-bold'>
-                            ...................................................
-                        </p>
-                        < p className='font-bold'>
-                            Doctor's Signature
-                        </p>
-                    </div>
-                </div>
-                <div className='bg-[#D2E7F7] p-5 rounded-lg' style={{ marginTop: "80px" }}>
-                    <div className='mt-5 flex justify-between items-center'>
-                        <p className='text-3xl font-bold italic'>
-                            Smart MediCare_
-                        </p>
-                        <p className='flex justify-between items-center font-bold'>
-                            <TfiHeadphoneAlt className='mr-1' />+880 1839-432144
-                        </p>
-                        <p className='flex justify-between items-center font-bold'>
-                            <MdEmail className='mr-1' />smartmedicare@gmail.com
-                        </p>
-                    </div>
-                    <div className='text-center font-bold mt-3'>
-                        <p>
-                            "স্মার্ট মেডিকেয়ার" - আপনার স্বাস্থ্য সেবা প্রদানে সর্বদা প্রস্তুত।
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className='m-5 text-center'>
-                <button
-                    onClick={() => window.print()}
-                    className="btn btn-outline bg-[#0E7490] hover:bg-[#D2E7F7] print:hidden text-xl text-[white] hover:text-[black]"
-                >
-                    <span className='mr-1 text-xl'>Print</span>< AiFillPrinter />
-                </button>
             </div>
         </div>
     );

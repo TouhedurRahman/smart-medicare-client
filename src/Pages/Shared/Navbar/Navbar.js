@@ -20,12 +20,12 @@ const Navbar = () => {
           Order
           <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
         </Link>
-        <ul className="p-2 z-50 bg-[#0e7490]">
+        <ul className="p-2 z-50 bg-[#0e7490] rounded-lg">
           <li>
-            <Link to="/doctor/myappointment/control">MyAppointment</Link>
+            <Link to="/doctor/myappointment/control">My Appointment</Link>
           </li>
           <li>
-            <Link to="/medicine/myappointment/control"> Medicine Order</Link>
+            <Link to="/medicine/myappointment/control">My Medicine Order</Link>
           </li>
         </ul>
       </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
         Emergency
         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
       </Link>
-      <ul className="p-1 z-50 bg-[#0e7490]">
+      <ul className="p-1 z-50 bg-[#0e7490] rounded-lg">
         <li><Link to="/donate/blood">Blood</Link></li>
         <li><Link to="/ambulance/show-up">Ambulance</Link></li>
 

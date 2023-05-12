@@ -69,6 +69,10 @@ const MyAppointment = () => {
             .catch(error => { })
     }
 
+    const notAccessToDelete = () => {
+        toast.error("Unable to delete! You're already appointed.");
+    }
+
     return (
         <div>
             {
@@ -101,6 +105,7 @@ const MyAppointment = () => {
                                             <th className='text-center'>Doctor</th>
                                             <th>Specialist</th>
                                             <th>Chamber</th>
+                                            <th>Date</th>
                                             <th>Visit Time</th>
                                             <th>Patient Name</th>
                                             <th className='text-center'>Ratings</th>
@@ -148,6 +153,11 @@ const MyAppointment = () => {
                                                 </td>
                                                 <td>
                                                     <span className="badge badge-ghost badge-sm">
+                                                        {appointment.date.slice(0, 10)}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span className="badge badge-ghost badge-sm">
                                                         {appointment.visitTime}
                                                     </span>
                                                 </td>
@@ -168,7 +178,7 @@ const MyAppointment = () => {
                                                 <td>
                                                     <div className="flex justify-center items-center">
                                                         {
-                                                            !appointment.paymentStatus.includes("unpaid")
+                                                            (appointment.paymentStatus) === 'paid'
                                                                 ?
                                                                 <p className='flex justify-center items-center italic text-[green] font-bold'>
                                                                     <BsCheckCircleFill className='mr-1' /><>Paid</>
@@ -181,11 +191,22 @@ const MyAppointment = () => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div className="flex justify-center items-center text-[red]">
-                                                        <button title="delete" className="btn btn-ghost" onClick={() => deleteAppointment(appointment._id)}>
-                                                            < AiFillDelete size={22} />
-                                                        </button>
-                                                    </div>
+                                                    {
+                                                        (appointment.paymentStatus) === 'paid'
+                                                            ?
+                                                            <div className="flex justify-center items-center text-[black]">
+                                                                <button title="delete" className="btn btn-ghost" onClick={() => notAccessToDelete()}>
+                                                                    < AiFillDelete size={22} />
+                                                                </button>
+                                                            </div>
+                                                            :
+                                                            <div className="flex justify-center items-center text-[red]">
+                                                                <button title="delete" className="btn btn-ghost" onClick={() => deleteAppointment(appointment._id)}>
+                                                                    < AiFillDelete size={22} />
+                                                                </button>
+                                                            </div>
+                                                    }
+
                                                 </td>
                                                 <td>
                                                     {
