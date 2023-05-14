@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
 import Marquee from "react-fast-marquee";
+import moment from "moment";
 import { AiFillPrinter } from 'react-icons/ai';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
 import { MdEmail } from 'react-icons/md';
@@ -47,13 +48,13 @@ const PrintAppointmentReceipt = () => {
                                 <p className='text-xl font-bold'>
                                     Specialist on {result.specialist}
                                 </p>
-                                <p className='text-xs mt-3'>
+                                <p className='text-xs mt-3 font-bold'>
                                     Chamber: {result.chamber}
                                 </p>
-                                <p className='text-xs'>
-                                    Appointed Date: {result.date.slice(0, 10)}
+                                <p className='text-xs font-bold'>
+                                    Appointed Date - {moment(result.date).format("MMMM DD, YYYY")}
                                 </p>
-                                <p className='text-xs'>
+                                <p className='text-xs font-bold'>
                                     Visiting Time: {result.visitTime}
                                 </p>
                             </div>

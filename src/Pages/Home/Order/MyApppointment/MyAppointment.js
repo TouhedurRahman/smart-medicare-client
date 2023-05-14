@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import Marquee from "react-fast-marquee";
-import { MdOutlinePayment, MdPending } from 'react-icons/md';
-import { AiFillDelete } from 'react-icons/ai';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
+import Marquee from "react-fast-marquee";
+import moment from "moment";
 import Rating from 'react-rating';
 import { toast } from 'react-hot-toast';
+import { MdOutlinePayment, MdPending } from 'react-icons/md';
 import { BsCheckCircleFill } from 'react-icons/bs';
-import { GrView } from 'react-icons/gr';
+import { FaTrashAlt } from 'react-icons/fa';
+import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const MyAppointment = () => {
@@ -46,7 +47,7 @@ const MyAppointment = () => {
     }
 
     const rating = (ratingValue, id) => {
-        const confirm = window.confirm("are you sure to give riveiw?")
+        const confirm = window.confirm("are you sure to give riveiw?");
         if (confirm) {
             axios.post(`http://localhost:5000/api/v1/appointment/${id}`, { ratingValue, id })
                 .then(response => {
@@ -59,14 +60,17 @@ const MyAppointment = () => {
     }
 
     const deleteAppointment = (e) => {
-        axios.delete(`http://localhost:5000/api/v1/appointment/${e}`, config)
-            .then(response => {
-                if (response.data.result.deletedCount) {
-                    const filter = appointment.filter(item => item._id !== e);
-                    setAppointment(filter)
-                }
-            })
-            .catch(error => { })
+        const confirm = window.confirm("are you sure delete?");
+        if (confirm) {
+            axios.delete(`http://localhost:5000/api/v1/appointment/${e}`, config)
+                .then(response => {
+                    if (response.data.result.deletedCount) {
+                        const filter = appointment.filter(item => item._id !== e);
+                        setAppointment(filter)
+                    }
+                })
+                .catch(error => { })
+        }
     }
 
     const notAccessToDelete = () => {
@@ -142,18 +146,18 @@ const MyAppointment = () => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span className="badge badge-ghost badge-sm">
+                                                    <span>
                                                         {appointment.specialist}
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    <span className="badge badge-ghost badge-sm">
+                                                    <span>
                                                         {appointment.chamber}
                                                     </span>
                                                 </td>
                                                 <td>
                                                     <span className="badge badge-ghost badge-sm">
-                                                        {appointment.date.slice(0, 10)}
+                                                        {moment(appointment.date).format("MMMM DD, YYYY")}
                                                     </span>
                                                 </td>
                                                 <td>
@@ -162,7 +166,7 @@ const MyAppointment = () => {
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    <span className="badge badge-ghost badge-sm">
+                                                    <span>
                                                         {appointment.patientName}
                                                     </span>
                                                 </td>
@@ -196,13 +200,13 @@ const MyAppointment = () => {
                                                             ?
                                                             <div className="flex justify-center items-center text-[black]">
                                                                 <button title="delete" className="btn btn-ghost" onClick={() => notAccessToDelete()}>
-                                                                    < AiFillDelete size={22} />
+                                                                    < FaTrashAlt size={22} />
                                                                 </button>
                                                             </div>
                                                             :
                                                             <div className="flex justify-center items-center text-[red]">
                                                                 <button title="delete" className="btn btn-ghost" onClick={() => deleteAppointment(appointment._id)}>
-                                                                    < AiFillDelete size={22} />
+                                                                    < FaTrashAlt size={22} />
                                                                 </button>
                                                             </div>
                                                     }
@@ -217,7 +221,7 @@ const MyAppointment = () => {
                                                                     to={`/dr/appointment/print/receipt/${appointment._id}`}
                                                                     className='text-[green]'
                                                                 >
-                                                                    <GrView className='text-[green]' size={22} />
+                                                                    <FaEye className='text-[green]' size={22} />
                                                                 </Link>
                                                             </div>
                                                             :
