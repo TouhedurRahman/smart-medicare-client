@@ -95,15 +95,14 @@ const Navbar = () => {
                     <span className="badge badge-sm indicator-item">{state?.cart?.length}</span>
                   </div>
                 </label>
-                <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
-                  <div className="card-body">
+                <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-[#0E7490] shadow">
+                  <div className="card-body text-center">
                     <span className="font-bold text-lg">{state?.cart?.length} Items</span>
-                    <span className="text-info">Subtotal: $999</span>
-                    <div className="card-actions">
-                      <Link to="/show/cart">
-                        <button className="btn btn-primary btn-block">View cart</button>
+                    {/* <span className="text-info">Subtotal: $999</span> */}
+                    <div className="text-center py-5">
+                      <Link to="/show/cart" className='text-white font-bold border border-[white] px-5 py-2 rounded-lg'>
+                        View cart
                       </Link>
-
                     </div>
                   </div>
                 </div>
