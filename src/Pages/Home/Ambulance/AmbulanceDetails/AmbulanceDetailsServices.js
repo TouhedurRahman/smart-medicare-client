@@ -5,6 +5,7 @@ import '../Ambulance.css'
 import { AiFillCar } from 'react-icons/ai';
 import { GiRotaryPhone } from 'react-icons/gi';
 import { BiCategoryAlt } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const AmbulanceDetailsServices = () => {
     const { id } = useParams();
@@ -136,9 +137,12 @@ const AmbulanceDetailsServices = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className='text-center mt-5'>
+                        <div className='flex justify-center items-center text-center mt-5'>
                             <a href={`tel:${modal.contact}`}>
-                                <button className="btn bg-[#0E7490]">Call</button>
+                                <button className="btn bg-[#0E7490] mr-10">Call</button>
+                                <Link to='/user/feedback'>
+                                    <button className="btn bg-[#0E7490] ml-10">Feedback</button>
+                                </Link>
                             </a>
                         </div>
                     </div>
