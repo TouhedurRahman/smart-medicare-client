@@ -8,6 +8,7 @@ import { BiCategoryAlt } from 'react-icons/bi';
 import { BsCartPlusFill } from 'react-icons/bs';
 import { GiMedicines } from 'react-icons/gi';
 import axios from 'axios';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const PharmacyService = () => {
 	const { dispatch, user } = useContext(AuthContext);
@@ -24,6 +25,15 @@ const PharmacyService = () => {
 	const [modal, setModal] = useState(false);
 
 	const [page, setPage] = useState(0);
+
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	const goToLogin = () => {
+		if (!user?.email) {
+			navigate('/user/login', { state: { from: location }, replace: true });
+		}
+	}
 
 	useEffect(() => {
 		fetch(`http://localhost:5000/api/v1/medicine?category=${filterMedicine}&page=${page}`)
@@ -128,15 +138,23 @@ const PharmacyService = () => {
 										</button>
 									</div>
 								</div>
-								<div className='my-1'>
-									<label
-										htmlFor="medicine-modal"
-										onClick={() => setModal(item)}
-										className="w-full flex justify-center items-center btn  bg-[#0E7490]"
-									>
-										<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
-									</label>
-								</div>
+								{
+									user.email
+										?
+										<div className='my-1'>
+											<label
+												htmlFor="medicine-modal"
+												onClick={() => setModal(item)}
+												className="w-full flex justify-center items-center btn  bg-[#0E7490]"
+											>
+												<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
+											</label>
+										</div>
+										:
+										<button onClick={() => goToLogin()} className='my-1 w-full flex justify-center items-center btn  bg-[#0E7490]'>
+											<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
+										</button>
+								}
 							</div>
 						)
 					}

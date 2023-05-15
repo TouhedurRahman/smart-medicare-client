@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { AiFillMedicineBox } from 'react-icons/ai';
 import { BiCategoryAlt } from 'react-icons/bi';
@@ -30,6 +30,15 @@ const MedicineBrandService = () => {
 	const [city, setCity] = useState("")
 	const [price, setPrice] = useState(0)
 	const [modal, setModal] = useState(false);
+
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	const goToLogin = () => {
+		if (!user?.email) {
+			navigate('/user/login', { state: { from: location }, replace: true });
+		}
+	}
 
 	const medicinePay = (e) => {
 		axios.post(`http://localhost:5000/api/v1/medicine/init`, {
@@ -115,15 +124,23 @@ const MedicineBrandService = () => {
 											</button>
 										</div>
 									</div>
-									<div className='my-1'>
-										<label
-											htmlFor="medicine-modal"
-											onClick={() => setModal(item)}
-											className="w-full flex justify-center items-center btn  bg-[#0E7490]"
-										>
-											<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
-										</label>
-									</div>
+									{
+										user.email
+											?
+											<div className='my-1'>
+												<label
+													htmlFor="medicine-modal"
+													onClick={() => setModal(item)}
+													className="w-full flex justify-center items-center btn  bg-[#0E7490]"
+												>
+													<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
+												</label>
+											</div>
+											:
+											<button onClick={() => goToLogin()} className='my-1 w-full flex justify-center items-center btn  bg-[#0E7490]'>
+												<span className='mr-1'>Medicine Order</span><AiFillMedicineBox />
+											</button>
+									}
 								</div>
 
 								<input type="checkbox" id="medicine-modal" className="modal-toggle" />
