@@ -63,11 +63,11 @@ const AddMedicine = () => {
                     </label>
                     <label className="input-group">
                         <span className="w-40 font-bold">Description</span>
-                        <input required type="text" ref={categoryRef} placeholder="Enter Medicine Description" className="border-4 border-indigo-500/100 ..." />
+                        <input required type="text" ref={descriptionRef} placeholder="Enter Medicine Description" className="border-4 border-indigo-500/100 ..." />
                     </label>
                     <label className="input-group">
-                        <span className="w-40 font-bold">Medicine Brand</span>
-                        <input required type="text" ref={descriptionRef} placeholder="Medicine Brand" className="border-4 border-indigo-500/100 ..." />
+                        <span className="w-40 font-bold">Medicine Category</span>
+                        <input required type="text" ref={categoryRef} placeholder="Enter Medicine Category" className="border-4 border-indigo-500/100 ..." />
                     </label>
                     <label className="input-group">
                         <span className="w-40 font-bold">Medicine Price</span>

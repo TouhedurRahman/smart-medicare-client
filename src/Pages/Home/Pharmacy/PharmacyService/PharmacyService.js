@@ -62,7 +62,7 @@ const PharmacyService = () => {
 	return (
 		<div>
 			<div className="sidebar py-5">
-				<div className='my-5'>
+				<div className='my-10'>
 					<FilterMedicine setFilterMedicine={setFilterMedicine} />
 				</div>
 			</div>

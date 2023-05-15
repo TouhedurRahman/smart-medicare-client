@@ -23,7 +23,7 @@ const DasboardLayout = () => {
                             <label tabIndex={0} className="btn  btn-outline   m-1 w-40"> <GiDoctorFace /> Doctor <BsArrowDownCircleFill /> </label>
                             <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                                 <li><Link to="/dashboard/doctor/add/category"> Add Doctor Category</Link></li>
-                                <li><Link to="/dashboard/adddoctor"> AddDoctor</Link></li>
+                                <li><Link to="/dashboard/adddoctor"> Add Doctor</Link></li>
                                 <li><Link to="/dashboard/showdoctor"> Doctor Handle</Link></li>
                             </ul>
                         </div>
@@ -31,10 +31,10 @@ const DasboardLayout = () => {
                         <div className="dropdown">
                             <label tabIndex={0} className="btn  btn-outline   m-1 w-40"> <GiDoctorFace />Medicine<BsArrowDownCircleFill /> </label>
                             <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><Link to="/dashboard/addmedicinebrand">Add MedicineBrand</Link></li>
-                                <li><Link to="/dashboard/medicinebrand"> Medicine brand</Link></li>
-                                <li><Link to="/dashboard/medicine">medicine</Link></li>
-                                <li><Link to="/dashboard/addmedicine"> Add Medicine  </Link></li>
+                                <li><Link to="/dashboard/addmedicinebrand">Add Medicine Brand</Link></li>
+                                <li><Link to="/dashboard/medicinebrand"> All Medicine Brand</Link></li>
+                                <li><Link to="/dashboard/medicine">All medicines</Link></li>
+                                <li><Link to="/dashboard/addmedicine">Add Medicine</Link></li>
                             </ul>
                         </div>
 
