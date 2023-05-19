@@ -68,7 +68,7 @@ const ProductCart = () => {
                             </div>
                             <div className='w-full flex justify-between items-center'>
                                 <div className='w-full flex justify-center text-center'>
-                                    <p className='flex justify-center items-center font-bold bg-[#C2C2C2] rounded-full p-1 px-3'>প্রতি পাতা ৳ {item.price}/-</p>
+                                    <p className='flex justify-center items-center font-bold bg-[#C2C2C2] rounded-full p-1 px-3'>প্রতি পাতা/পিস ৳ {item.price}/-</p>
                                 </div>
                                 <div>
                                     <div>
