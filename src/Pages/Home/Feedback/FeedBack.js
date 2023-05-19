@@ -114,10 +114,10 @@ const FeedBack = () => {
                         </div>
                         <div className='text-center'>
                             <button
-                                className="bg-blue-500 text-white p-2 mt-4 hover:bg-blue-600 rounded-lg"
+                                className="bg-[#0E7490] text-white p-2 mt-4 hover:bg-blue-600 rounded-lg px-10"
                                 type="submit"
                             >
-                                <span className='flex flex-center align-center  '><span>Send </span> <BiSend className='mt-1' /> </span>
+                                <span className='flex flex-center align-center'><span>Send </span> <BiSend className='mt-1 ml-2' /> </span>
                             </button>
                         </div>
                     </form>
