@@ -8,7 +8,7 @@ import { BiCategoryAlt } from 'react-icons/bi';
 import { BsCartPlusFill } from 'react-icons/bs';
 import { GiMedicines } from 'react-icons/gi';
 import axios from 'axios';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const PharmacyService = () => {
 	const { dispatch, user } = useContext(AuthContext);
@@ -130,12 +130,23 @@ const PharmacyService = () => {
 										<p className='flex justify-center items-center font-bold bg-[#C2C2C2] rounded-full p-1 px-3'>প্রতি পাতা ৳ {item.price}/-</p>
 									</div>
 									<div>
-										<button
-											className="btn bg-[#0E7490]"
-											onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}
-										>
-											<BsCartPlusFill />
-										</button>
+										{
+											user?.email
+												?
+												<button
+													className="btn bg-[#0E7490]"
+													onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}
+												>
+													<BsCartPlusFill />
+												</button>
+												:
+												<button
+													className="btn bg-[#0E7490]"
+													onClick={() => goToLogin()}
+												>
+													<BsCartPlusFill />
+												</button>
+										}
 									</div>
 								</div>
 								{
