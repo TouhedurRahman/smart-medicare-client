@@ -82,21 +82,25 @@ const AmbulanceDetailsServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4 py-5   justify-center align-center">
                 {
                     ambulance.map((ambulanceData, index) => <div
+                        key={ambulanceData._id}
                         className="card bg-base-100 shadow-xl"
                     >
                         <figure className="px-10 pt-10">
                             <img src={ambulanceData.img} alt="Shoes" className="rounded-xl shadow-xl" style={{ height: "200px", width: "250px" }} />
                         </figure>
                         <div className="card-body items-center text-center">
-                            <h2 className="card-title">{ambulanceData.location}</h2>
+                            <h2 className="card-title font-bold">{ambulanceData.location}</h2>
                             <div className='w-full mb-5'>
                                 <div className='w-full flex justify-between items-center mb-2'>
-                                    <p className='flex justify-start items-center'><AiFillCar className='mr-1' />{ambulanceData.ambulanceNumber}</p>
-                                    <p className='flex justify-end items-center'>{ambulanceData.category === 'ac' ? 'AC' : "Non-AC"}<BiCategoryAlt className='ml-1' /></p>
+                                    <p className='flex justify-start items-center font-bold'><AiFillCar className='mr-1' />{ambulanceData.ambulanceNumber}</p>
+                                    <p className='flex justify-end items-center font-bold'>{ambulanceData.category === 'ac' ? 'AC' : "Non-AC"}<BiCategoryAlt className='ml-1' /></p>
                                 </div>
                                 <div className='w-full flex justify-between'>
-                                    <p className='flex justify-center items-center bg-[#C2C2C2] rounded-full'>সার্ভিস চার্জ ৳ {ambulanceData.serviceCharge}/-</p>
-                                    <p className='flex justify-end items-center'>{ambulanceData.contact}<GiRotaryPhone className='text-[green] ml-1' /></p>
+                                    <p className='flex justify-center items-center bg-[#C2C2C2] rounded-full font-bold'>সার্ভিস চার্জ ৳ {ambulanceData.serviceCharge}/-</p>
+                                    <p className='flex justify-end items-center font-bold'>
+                                        +88{ambulanceData.contact.slice(0, 1)} {ambulanceData.contact.slice(1, 5)}-{ambulanceData.contact.slice(5)}
+                                        <GiRotaryPhone className='text-[green] ml-1' />
+                                    </p>
                                 </div>
                             </div>
                             <div className="w-full flex justify-between items-center">
