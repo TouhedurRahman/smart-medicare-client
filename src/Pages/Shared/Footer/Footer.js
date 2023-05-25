@@ -36,30 +36,39 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='lg:block hidden'>
-                    <h6>SERVICES</h6>
-                    <hr></hr>
+                    <div className='mb-5'>
+                        <h6>SERVICES</h6>
+                        <hr></hr>
+                    </div>
                     <p className='link link-hover'>Doctor's Appoinment</p>
                     <p className='link link-hover'>Online Pharmacy</p>
                     <p className='link link-hover'>Blood</p>
                     <p className='link link-hover'>Ambulance</p>
                 </div>
                 <div className='lg:block hidden'>
-                    <h6>COMPANY</h6>
-                    <hr></hr>
+                    <div className='mb-5'>
+                        <h6>COMPANY</h6>
+                        <hr></hr>
+                    </div>
                     <p className='link link-hover'>About Us</p>
                     <p className='link link-hover'>Contacts</p>
                     <p className='link link-hover'>Jobs</p>
                 </div>
                 <div className='lg:block hidden'>
-                    <h6>LEGAL</h6>
-                    <hr></hr>
+                    <div className='mb-5'>
+                        <h6>LEGAL</h6>
+                        <hr></hr>
+                    </div>
+
                     <p className='link link-hover'>Terms of use</p>
                     <p className='link link-hover'>Privacy Policy</p>
                     <p className='link link-hover'>Cookie Policy</p>
                 </div>
                 <div className='get-touch'>
-                    <h6>FOLLOW US ON</h6>
-                    <hr></hr>
+                    <div className='mb-5'>
+                        <h6>FOLLOW US ON</h6>
+                        <hr></hr>
+                    </div>
                     <div className='get-touch-icons mt-5 mb-5' style={{ fontSize: "30px" }}>
                         <MdEmail style={{ cursor: "pointer" }}></MdEmail>
                         <AiFillYoutube style={{ cursor: "pointer" }}></AiFillYoutube>
@@ -71,7 +80,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr className='w-1/2 mx-auto' />
-            <div className='text-center'>
+            <div className='text-center my-5'>
                 <p className='text-xl'><small>Copyright © {year} All Rights Reserved.</small></p>
             </div>
         </div>
