@@ -18,7 +18,6 @@ const Banner = () => {
             <div
                 className="hero"
                 style={{
-                    // background: `url(${bg})`
                     background: 'https://i.ibb.co/XkmTkrF/doctors.jpg'
                 }}
             >
@@ -35,7 +34,7 @@ const Banner = () => {
                         <p className="py-6 pr-2 text-justify text-black">
                             Welcome to our one-stop healthcare platform where you can easily schedule appointments with doctors, purchase medication from our online pharmacy, find a blood donor, and quickly call an ambulance in case of emergencies. Our user-friendly website is designed to provide convenient and accessible healthcare services to everyone.
                         </p>
-                        <label htmlFor="banner-modal" className="btn bg-gradient-to-r from-primary to-secondary text-white">Learn More</label >
+                        <label htmlFor="banner-modal" className="btn bg-gradient-to-r from-[#0E7490] to-[#8437A5] text-white">Learn More</label >
                         <input type="checkbox" id="banner-modal" className="modal-toggle" />
                         <div className="modal">
                             <div className="modal-box">

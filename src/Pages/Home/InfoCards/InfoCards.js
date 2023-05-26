@@ -11,21 +11,21 @@ const InfoCards = () => {
             name: 'Opening Hours',
             description: 'Office 10.00 am to 08.00 pm everyday',
             icon: clock,
-            bgClass: 'bg-gradient-to-r from-primary to-secondary text-white'
+            bgClass: 'bg-gradient-to-r from-[#0E7490] to-secondary text-white'
         },
         {
             id: 2,
             name: 'Our Locations',
             description: 'Ashulia, Savar Dhaka, Bangladesh.',
             icon: marker,
-            bgClass: 'bg-accent'
+            bgClass: 'bg-[#604A9F]'
         },
         {
             id: 3,
             name: 'Contuct US',
             description: '+880 1839-432144 smartmedicare@gmail.com',
             icon: phone,
-            bgClass: 'bg-gradient-to-r from-primary to-secondary text-white'
+            bgClass: 'bg-gradient-to-r from-secondary to-[#0E7490] text-white'
         }
     ]
 
