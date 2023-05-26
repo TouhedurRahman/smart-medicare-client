@@ -7,6 +7,11 @@ const ModalDoctor = (props) => {
         const value = { ...data, patientName: e }
         setData(value)
     }
+
+    const setPatientAge = e => {
+        const value = { ...data, patientAge: e }
+        setData(value)
+    }
     const setPhone = e => {
         const value = { ...data, contactNumber: e }
         setData(value)
@@ -30,14 +35,21 @@ const ModalDoctor = (props) => {
                         <form className='mt-5'>
                             <input
                                 type="text"
-                                placeholder='Patient Name'
+                                placeholder="Patient's Name"
                                 onChange={e => setPatient(e.target.value)}
                                 className="text-center rounded-xl"
                                 required
                             />
                             <input
+                                type="number"
+                                placeholder="Patient's Age"
+                                onChange={e => setPatientAge(e.target.value)}
+                                className="text-center rounded-xl"
+                                required
+                            />
+                            <input
                                 type="phone"
-                                placeholder='Phone Number'
+                                placeholder="Mobile Number"
                                 onChange={e => setPhone(e.target.value)}
                                 className="text-center rounded-xl"
                                 required

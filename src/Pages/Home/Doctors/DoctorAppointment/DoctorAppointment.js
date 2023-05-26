@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { DayPicker } from 'react-day-picker';
-import { format, setDate } from 'date-fns';
 import 'react-day-picker/dist/style.css';
 import './DoctorAppointment.css'
 import { useLoaderData } from 'react-router';
@@ -9,17 +8,12 @@ import ModalDoctor from './ModalDoctor';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const DoctorAppointment = () => {
+    const { user } = useContext(AuthContext);
+
     const [selected, setSelected] = React.useState();
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const { result } = useLoaderData();
-    const { user, token } = useContext(AuthContext);
-
-    let config = {
-        headers: {
-            'Authorization': 'Bearer ' + token
-        }
-    }
 
     const [data, setData] = useState({
         name: result.name,

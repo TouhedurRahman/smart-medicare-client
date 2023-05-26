@@ -65,18 +65,26 @@ const PrintAppointmentReceipt = () => {
                             <table className="table w-full my-1" style={{ border: "1px solid #D2E7F7" }}>
                                 <thead style={{ borderBottom: "1px solid #D2E7F7" }}>
                                     <tr className='text-xs'>
-                                        <th className='text-center' style={{ padding: "0.5rem" }}>Patient Name</th>
-                                        <th className='text-center' style={{ padding: "0.5rem" }}>Mobile No.</th>
-                                        <th className='text-center' style={{ padding: "0.5rem" }}>Email</th>
+                                        <th className='text-left' style={{ padding: "0.5rem" }}>Patient's Name</th>
+                                        <th className='text-center' style={{ padding: "0.5rem" }}>Age</th>
+                                        <th className='text-right' style={{ padding: "0.5rem" }}>Mobile No.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr className='text-sm font-bold'>
-                                        <td className='text-center' style={{ padding: "0.5rem" }}>{result.patientName}</td>
+                                        <td className='text-left' style={{ padding: "0.5rem" }}>{result.patientName}</td>
                                         <td className='text-center' style={{ padding: "0.5rem" }}>
+                                            {
+                                                (result.patientAge) > 1
+                                                    ?
+                                                    `${result.patientAge} Years`
+                                                    :
+                                                    `${result.patientAge} Year`
+                                            }
+                                        </td>
+                                        <td className='text-right' style={{ padding: "0.5rem" }}>
                                             +88{result.contactNumber.slice(0, 1)} {result.contactNumber.slice(1, 5)}-{result.contactNumber.slice(5)}
                                         </td>
-                                        <td className='text-center' style={{ padding: "0.5rem" }}>{result.userEmail}</td>
                                     </tr>
                                 </tbody>
                             </table>
