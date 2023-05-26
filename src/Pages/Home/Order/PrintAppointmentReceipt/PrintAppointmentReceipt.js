@@ -21,8 +21,8 @@ const PrintAppointmentReceipt = () => {
                     </span>
                 </Marquee>
             </div>
-            <div className='mx-auto' style={{ width: '576px' }}>
-                <div style={{ marginLeft: "-130px" }}>
+            <div className='mx-auto' style={{ width: '700px' }}>
+                <div>
                     <div>
                         <h3 className='text-xl text-center text-[#0E7490] font-bold mx-5 my-2'>
                             <i>
@@ -112,7 +112,7 @@ const PrintAppointmentReceipt = () => {
                             <img
                                 src="https://i.ibb.co/ryysCM8/paid-logo.png"
                                 className="relative opacity-30"
-                                style={{ width: '150px', height: '150px', marginTop: "-140px", marginLeft: "422px" }}
+                                style={{ width: '150px', height: '150px', marginTop: "-140px", marginLeft: "415px" }}
                                 alt='Loading...'
                             />
                         </div>
