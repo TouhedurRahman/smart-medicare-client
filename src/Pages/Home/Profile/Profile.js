@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { AiOutlineSend } from 'react-icons/ai';
+import { toast } from 'react-hot-toast';
+import { useRef } from 'react';
 
 const Profile = () => {
-	const { userProfile } = useContext(AuthContext);
+	const { userProfile, resetPassword } = useContext(AuthContext);
 	const [file, setFile] = useState(null);
+	const [enterUserEmail, setEnterUserEmail] = useState('');
+	const inputRef = useRef(null);
 
 	const handleChange = (e) => {
 		setFile(e.target.files[0]);
@@ -26,6 +30,29 @@ const Profile = () => {
 			}
 		} catch (err) { }
 	};
+
+	const handleEmailOnBlur = event => {
+        const email = event.target.value;
+		if(userProfile.email === email){
+			setEnterUserEmail(email);
+		}
+    }
+
+	const handleResetPassword = () => {
+        if (enterUserEmail) {
+            resetPassword(enterUserEmail)
+                .then(() => {
+                    toast.success("Email Sent! Please check your email.");
+					inputRef.current.value = '';
+					setEnterUserEmail('');
+                })
+                .then(err => { })
+        }
+        else {
+            toast.error("Error! Please Enter your registered email.");
+			inputRef.current.value = '';
+        }
+    }
 
 	return (
 		<div>
@@ -93,8 +120,20 @@ const Profile = () => {
 							<p className='text-2xl font-bold italic my-2 text-[#0E7490]'>Change Password</p>
 							<hr></hr>
 							<div className='flex justify-between items-center'>
-								<input type="text" placeholder="Please Enter your Email" className="input input-border w-full max-w-xs rounded-full" />
-								<button value="submit" className='btn mx-auto bg-[#0E7490]'>Send <AiOutlineSend className="ml-2" /></button>
+								<input
+									type="email"
+									placeholder="Please Enter your Email"
+									className="input input-border w-full max-w-xs rounded-full"
+									onBlur={handleEmailOnBlur}
+									ref={inputRef}
+								/>
+								<button
+									value="submit"
+									className='btn mx-auto bg-[#0E7490]'
+									onClick={handleResetPassword}
+								>
+									Send <AiOutlineSend className="ml-2" />
+									</button>
 							</div>
 						</div>
 					</div>

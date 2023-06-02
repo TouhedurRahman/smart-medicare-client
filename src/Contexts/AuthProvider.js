@@ -1,7 +1,15 @@
 import axios from "axios";
 import { createContext, useEffect, useReducer, useState } from "react";
 import { intialstate, reducer } from "../AddCart/productCart";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import {
+	getAuth,
+	createUserWithEmailAndPassword,
+	onAuthStateChanged,
+	updateProfile,
+	signOut,
+	signInWithEmailAndPassword,
+	sendPasswordResetEmail
+} from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext();
@@ -28,6 +36,11 @@ const AuthProvider = ({ children }) => {
 	let signIn = (data) => {
 		return signInWithEmailAndPassword(auth, data.email, data.password)
 	}
+
+	// reset password or change password
+	const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email);
+    }
 
 	//  user are running here 
 	useEffect(() => {
@@ -60,6 +73,7 @@ const AuthProvider = ({ children }) => {
 		createUser,
 		updateUser,
 		user,
+		resetPassword,
 		setError,
 		error,
 		state,
