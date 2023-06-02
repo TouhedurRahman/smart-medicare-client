@@ -5,15 +5,17 @@ import './Login.css'
 
 const LoginProcess = () => {
     const [toggler, setToggler] = useState(true)
-    // const container = document.getElementById('login-container');
+
     const signUpClick = e => {
         setToggler(false)
     }
+
     const signInClick = e => {
         setToggler(true)
     }
+
     return (
-        <div className='container mx-auto text-center'>
+        <div className='container mx-auto text-center my-5'>
             <div className='flex justify-center ...'>
                 <div className={toggler ? 'login-container' : 'login-container right-panel-active'} id="login-container">
                     <Sign />

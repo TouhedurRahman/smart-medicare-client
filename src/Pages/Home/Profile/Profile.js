@@ -32,27 +32,27 @@ const Profile = () => {
 	};
 
 	const handleEmailOnBlur = event => {
-        const email = event.target.value;
-		if(userProfile.email === email){
+		const email = event.target.value;
+		if (userProfile.email === email) {
 			setEnterUserEmail(email);
 		}
-    }
+	}
 
 	const handleResetPassword = () => {
-        if (enterUserEmail) {
-            resetPassword(enterUserEmail)
-                .then(() => {
-                    toast.success("Email Sent! Please check your email.");
+		if (enterUserEmail) {
+			resetPassword(enterUserEmail)
+				.then(() => {
+					toast.success("Email Sent! Please check your email.");
 					inputRef.current.value = '';
 					setEnterUserEmail('');
-                })
-                .then(err => { })
-        }
-        else {
-            toast.error("Error! Please Enter your registered email.");
+				})
+				.then(err => { })
+		}
+		else {
+			toast.error("Error! Please Enter your registered email.");
 			inputRef.current.value = '';
-        }
-    }
+		}
+	}
 
 	return (
 		<div>
@@ -133,7 +133,7 @@ const Profile = () => {
 									onClick={handleResetPassword}
 								>
 									Send <AiOutlineSend className="ml-2" />
-									</button>
+								</button>
 							</div>
 						</div>
 					</div>
