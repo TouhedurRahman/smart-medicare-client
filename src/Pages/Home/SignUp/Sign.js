@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Sign = () => {
 	const [data, setData] = useState({})
@@ -22,9 +23,8 @@ const Sign = () => {
 
 	const handleSubmit = (e) => {
 		if (data.password !== data.confirmPassword) {
-			window.alert("mismatch password");
-		}
-		else {
+			toast("Password and Confirm Password must be same.");
+		} else {
 			createUser(data.email, data.password)
 				.then((result) => {
 					const user = result.user;
@@ -33,17 +33,10 @@ const Sign = () => {
 					}).then(() => {
 						saveUser(data)
 						navigate("/")
-					}).catch((error) => {
-						// An error occurred
-						// ...
-					});
+					}).catch((error) => { });
 
 				})
-				.catch((error) => {
-					const errorCode = error.code;
-					const errorMessage = error.message;
-				});
-
+				.catch((error) => { });
 		}
 		e.preventDefault()
 	}

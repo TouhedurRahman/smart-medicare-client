@@ -90,14 +90,14 @@ const Login = () => {
                     className='rounded-full'
                     ref={passwordRef}
                 />
-                <div className="mb-3 form-check py-3">
-                    <div className='flex justify-start items-center'>
+                <div className="w-full">
+                    <div className='flex justify-center items-center'>
                         <input
                             type="checkbox"
-                            className="form-check-input"
+                            className="w-4/3 form-check-input"
                             onClick={togglePassword}
                         />
-                        <label className="w-full form-check-label text-[white]" htmlFor="showPasswordCheckbox">
+                        <label className="w-full text-[white] flex justify-start -p-5">
                             Show Password
                         </label>
                     </div>
@@ -113,7 +113,7 @@ const Login = () => {
                         </button>
                     </div>
                 </p>
-                <button className='w-full hover:bg-[white] hover:text-[black] my-5'>Sign In</button>
+                <button className='w-full hover:bg-[white] hover:text-[black] mb-5'>Sign In</button>
             </form>
         </div>
     );
