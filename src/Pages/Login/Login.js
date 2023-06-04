@@ -80,30 +80,36 @@ const Login = () => {
                 <input
                     type="email"
                     placeholder="Email"
-                    className='rounded-full'
+                    className='rounded-xl'
                     ref={emailRef}
                     onBlur={handleEmailOnBlur}
                 />
                 <input
                     type={passwordShown ? "text" : "password"}
                     placeholder="Password"
-                    className='rounded-full'
+                    className='rounded-xl'
                     ref={passwordRef}
                 />
-                <div className="w-full">
+                <div className="w-full mt-1">
                     <div className='flex justify-center items-center'>
-                        <input
-                            type="checkbox"
-                            className="w-4/3 form-check-input"
-                            onClick={togglePassword}
-                        />
-                        <label className="w-full text-[white] flex justify-start -p-5">
+                        <div>
+                            <input
+                                type="checkbox"
+                                onClick={togglePassword}
+                                className="form-check-input cursor-pointer"
+                                id="showPasswordCheckbox"
+                            />
+                        </div>
+                        <label
+                            htmlFor="showPasswordCheckbox"
+                            className="w-full text-[white] flex justify-start ml-1 cursor-pointer"
+                        >
                             Show Password
                         </label>
                     </div>
                 </div>
                 <p className='w-full text-[white]'>
-                    <div className='w-full flex justify-center items-center'>
+                    <div className='w-full flex justify-start items-center'>
                         Forget password?
                         <button
                             onClick={handleResetPassword}
@@ -113,7 +119,7 @@ const Login = () => {
                         </button>
                     </div>
                 </p>
-                <button className='w-full hover:bg-[white] hover:text-[black] mb-5'>Sign In</button>
+                <button className='w-full hover:bg-[white] hover:text-[black] mb-5 rounded-xl'>Sign In</button>
             </form>
         </div>
     );

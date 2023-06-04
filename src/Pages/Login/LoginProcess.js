@@ -23,13 +23,13 @@ const LoginProcess = () => {
                     <div className="overlay-login-container">
                         <div className="overlay">
                             <div className="overlay-panel overlay-left">
-                                <h1 className='text-[black] font-bold'>Welcome Back!</h1>
-                                <p className='login-p text-[black] font-bold'>To keep connected with us please login with your personal info</p>
+                                <h1 className='text-[black] text-2xl font-bold'>Welcome Back!</h1>
+                                <p className='login-p text-[black] font-bold'>Already have an account? Please sign in and stay with us.</p>
                                 <button className="bg-[white] text-[black] border-[black] hover:bg-[black] hover:text-[white] hover: border-[white]" id="signIn" onClick={() => signInClick()}>Sign In</button>
                             </div>
                             <div className="overlay-panel overlay-right">
                                 <h1 className='text-[black] text-2xl font-bold'>Smart MediCare</h1>
-                                <p className='login-p text-[black] font-bold'>Enter your personal details and start journey with us</p>
+                                <p className='login-p text-[black] font-bold'>Don't have any account? Enter your personal details and start journey with us.</p>
                                 <button className="bg-[white] text-[black] border-[black] hover:bg-[black] hover:text-[white] hover: border-[white]" id="signUp" onClick={() => signUpClick()}>Sign Up</button>
                             </div>
                         </div>

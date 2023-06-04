@@ -66,14 +66,14 @@ const Sign = () => {
 				<input
 					type="text"
 					placeholder="Name"
-					className='rounded-full'
+					className='rounded-xl'
 					name="name"
 					onChange={(e) => signUpValue(e)}
 				/>
 				<input
 					type="email"
 					placeholder="Email"
-					className='rounded-full'
+					className='rounded-xl'
 					name="email"
 					onChange={(e) => signUpValue(e)}
 				/>
@@ -81,17 +81,17 @@ const Sign = () => {
 					type="password"
 					name="password"
 					placeholder="Password"
-					className='rounded-full'
+					className='rounded-xl'
 					onChange={(e) => signUpValue(e)}
 				/>
 				<input
 					type="password"
 					name="confirmPassword"
 					placeholder="confirm Password"
-					className='rounded-full'
+					className='rounded-xl'
 					onChange={(e) => signUpValue(e)}
 				/>
-				<button className='w-full hover:bg-[white] hover:text-[black] my-5'>Sign Up</button>
+				<button className='w-full hover:bg-[white] hover:text-[black] my-5 rounded-xl'>Sign Up</button>
 			</form>
 		</div>
 	);
