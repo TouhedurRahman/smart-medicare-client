@@ -87,20 +87,28 @@ const DoctorAppointment = () => {
             </div>
             <div className="card  lg:card-side shadow-xl">
                 <div className='ml-5 my-auto rounded-lg'>
-                    <figure><img className='w-90 h-80' src={result?.imgUrl} alt="Loading..." /></figure>
+                    <figure>
+                        <img style={{height: '500px', width: '500px'}} src={result?.imgUrl} alt="Loading..." />
+                    </figure>
+                    <p className='text-xl text-[gray] font-bold text-center mt-3'>BMDC No. <span className='text-xl text-[black] font-bold text-center mt-3'>{result.bmdcNo}</span></p>
                 </div>
                 <div className="card-body">
                     <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-4'>
                         <div className="card my-auto">
                             <div className="card-body">
                                 <h2 className="text-3xl font-bold">{result.name}</h2>
+                                <h2 className="text-xl font-bold">{result.qualification}</h2>
                                 <div>
-                                    <p className='pb-0 p-0'>{result.qualification}</p>
-                                    <p className='p-0 m-0'>{result.specialist}</p>
-                                    <p>{result?.experience}</p>
-                                    <p>{result?.chamber}</p>
-                                    <p>{result?.visitTime}</p>
-                                    <p>Visiting Fee ৳ {result.fee}/-</p>
+                                    <p className='text-xl text-[gray] font-bold mt-3'>Specialist</p>
+                                    <p className='ml-5'>{result.specialist}</p>
+                                    <p className='text-xl text-[gray] font-bold mt-3'>Experience</p>
+                                    <p className='ml-5'>{result?.experience}</p>
+                                    <p className='text-xl text-[gray] font-bold mt-3'>Chamber</p>
+                                    <p className='ml-5'>{result?.chamber}</p>
+                                    <p className='text-xl text-[gray] font-bold mt-3'>Visiting Time</p>
+                                    <p className='ml-5'>{result?.visitTime}</p>
+                                    <p className='text-xl text-[gray] font-bold mt-3'>Visiting Fee</p>
+                                    <p className='ml-5'>৳ {result.fee}/-</p>
                                 </div>
                                 <div className="card-actions justify-end">
                                     <ModalDoctor

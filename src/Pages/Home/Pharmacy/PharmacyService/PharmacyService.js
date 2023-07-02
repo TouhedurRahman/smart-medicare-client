@@ -71,13 +71,13 @@ const PharmacyService = () => {
 
 	return (
 		<div>
-			<div className="sidebar py-5">
-				<div className='my-10'>
+			<div className="w-full topbar py-2">
+				<div className='my-5'>
 					<FilterMedicine setFilterMedicine={setFilterMedicine} />
 				</div>
 			</div>
 
-			<div className="content">
+			<div className="" >
 				<label htmlFor="simple-search" className="sr-only">Search</label>
 				<div className="relative w-full">
 					<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
