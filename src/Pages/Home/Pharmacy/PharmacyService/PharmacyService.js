@@ -183,9 +183,9 @@ const PharmacyService = () => {
 					}
 				</div>
 
-				<div className='text-center'>
+				<div className='pagination text-center'>
 					<button
-						className='pagination-button bg-[white] text-[black] disabled:text-[gray]  border-none'
+						className='disabled:text-[gray]'
 						onClick={() => setPage(page - 1)}
 						disabled={page === 0}
 					>
@@ -202,20 +202,13 @@ const PharmacyService = () => {
 									onClick={
 										() => setPage(number)
 									}
-									style={{
-										textAlign: 'center',
-										background: '#0E7490',
-										color: 'white',
-										margin: '10px',
-										borderRadius: "50%"
-									}}
 								>
 									{number + 1}
 								</button>
 							)
 					}
 					<button
-						className='pagination-button bg-[white] text-[black] border-none disabled:text-[gray]'
+						className='disabled:text-[gray]'
 						onClick={() => setPage(page + 1)}
 						disabled={page === pageCount - 1}
 					>
