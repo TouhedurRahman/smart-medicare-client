@@ -14,7 +14,7 @@ const FilterMedicine = (props) => {
             <div className='mx-auto'>
                 <div className='flex justify-between'>
                     <button
-                        onClick={()=> window.location.reload()}
+                        onClick={() => window.location.reload()}
                         className='medicine-btn hover-underline-animation bg-[#0E7490]'
                     >
                         <TfiReload /> All Medicines
@@ -26,7 +26,7 @@ const FilterMedicine = (props) => {
                         className='medicine-btn hover-underline-animation bg-[#0E7490]'
                     >
                         <SiGeneralmotors /> General Medicines
-                    </button> 
+                    </button>
 
                     <button
                         value="women"
@@ -34,7 +34,7 @@ const FilterMedicine = (props) => {
                         className='medicine-btn hover-underline-animation bg-[#0E7490]'
                     >
                         <RiWomenLine /> Women Care
-                    </button> 
+                    </button>
 
                     <button
                         value="devices"

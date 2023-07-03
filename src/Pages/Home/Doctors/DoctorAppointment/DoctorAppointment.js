@@ -88,7 +88,7 @@ const DoctorAppointment = () => {
             <div className="card  lg:card-side shadow-xl">
                 <div className='ml-5 my-auto rounded-lg'>
                     <figure>
-                        <img style={{height: '500px', width: '500px'}} src={result?.imgUrl} alt="Loading..." />
+                        <img style={{ height: '500px', width: '500px' }} src={result?.imgUrl} alt="Loading..." />
                     </figure>
                     <p className='text-xl text-[gray] font-bold text-center mt-3'>BMDC No. <span className='text-xl text-[black] font-bold text-center mt-3'>{result.bmdcNo}</span></p>
                 </div>

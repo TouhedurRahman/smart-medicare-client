@@ -9,6 +9,7 @@ import { BsCartPlusFill } from 'react-icons/bs';
 import { GiMedicines } from 'react-icons/gi';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
 
 const PharmacyService = () => {
 	const { dispatch, user } = useContext(AuthContext);
@@ -24,6 +25,7 @@ const PharmacyService = () => {
 
 	const [modal, setModal] = useState(false);
 
+	const [pageCount, setPageCount] = useState(0);
 	const [page, setPage] = useState(0);
 
 	const location = useLocation();
@@ -48,6 +50,16 @@ const PharmacyService = () => {
 			})
 			.catch(error => { })
 	}, [filterMedicine, searchMedicine, page]);
+
+	useEffect(() => {
+		fetch('http://localhost:5000/api/v1/medicineCount')
+			.then(res => res.json())
+			.then(data => {
+				const count = data.count;
+				const pages = Math.ceil(count / 10);
+				setPageCount(pages);
+			})
+	}, [])
 
 	const handlerMedicine = (e) => {
 		setSearchMedicine(e.target.value);
@@ -117,12 +129,12 @@ const PharmacyService = () => {
 										<p
 											className="text-gray-700 text-base text-center"
 										>
-											{item.description.slice(0, 75)}
+											{item.description.slice(0, 75) + '...'}
 										</p>
 									</div>
 								</div>
 								<div className='w-full flex justify-between items-center mb-2'>
-									<p className='flex justify-end items-center font-bold'><BiCategoryAlt className='mr-1' />{item.category}</p>
+									<p className='flex justify-end items-center font-bold'><BiCategoryAlt className='mr-1' />{item.category.toUpperCase()}</p>
 									<p className='flex justify-start items-center font-bold'>{item.brand.name}<GiMedicines className='ml-1' /></p>
 								</div>
 								<div className='w-full flex justify-between items-center'>
@@ -170,6 +182,47 @@ const PharmacyService = () => {
 						)
 					}
 				</div>
+
+				<div className='text-center'>
+					<button
+						className='pagination-button bg-[white] text-[black] disabled:text-[gray]  border-none'
+						onClick={() => setPage(page - 1)}
+						disabled={page === 0}
+					>
+						<span className=' flex justify-center items-center'><AiOutlineDoubleLeft className='mr-2' /> Previous</span>
+					</button>
+					{
+						[...Array(pageCount).keys()]
+							.map(number =>
+								<button
+									className={
+										page === number ? 'selected' : ''
+									}
+
+									onClick={
+										() => setPage(number)
+									}
+									style={{
+										textAlign: 'center',
+										background: '#0E7490',
+										color: 'white',
+										margin: '10px',
+										borderRadius: "50%"
+									}}
+								>
+									{number + 1}
+								</button>
+							)
+					}
+					<button
+						className='pagination-button bg-[white] text-[black] border-none disabled:text-[gray]'
+						onClick={() => setPage(page + 1)}
+						disabled={page === pageCount - 1}
+					>
+						<span className=' flex justify-center items-center'>Next <AiOutlineDoubleRight className="ml-2" /></span>
+					</button>
+				</div>
+
 				<input type="checkbox" id="medicine-modal" className="modal-toggle" />
 				<div className="modal">
 					<div className="modal-box relative">
