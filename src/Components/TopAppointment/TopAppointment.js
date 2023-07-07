@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 
 const TopAppointment = () => {
@@ -25,7 +25,7 @@ const TopAppointment = () => {
 			</div>
 			<div className='grid justify-center align-center'>
 				<BarChart
-					width={500}
+					width={1350}
 					height={300}
 					data={data}
 					margin={{
