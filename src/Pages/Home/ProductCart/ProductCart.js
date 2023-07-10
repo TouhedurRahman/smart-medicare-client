@@ -31,7 +31,7 @@ const ProductCart = () => {
             category: modal?.name,
             city: city,
             name: name,
-            price: price,
+            price: (price + 10),
             id: modal?._id,
             email: user?.email
         })
@@ -140,11 +140,15 @@ const ProductCart = () => {
                         </form>
                     </div>
                     <div className='text-center text-lg mt-5'>
-                        <h1>Total Price ৳ {!price ? modal?.price : price}/-</h1>
+                        <h1>Total Price ৳ {!price ? (modal?.price + 10) : (price + 10)}/-</h1>
                     </div>
 
                     <div className="modal-action">
                         <label htmlFor="medicine-modal" className="btn rounded-xl w-full" onClick={() => medicinePay()}>Medicine Order</label>
+                    </div>
+
+                    <div className='text-center text-[gray] italic mt-3'>
+                        <h1>** বিঃদ্রঃ ১০ টাকা ডেলিভারি চার্জ যুক্ত করা হয়েছে **</h1>
                     </div>
                 </div>
             </div>
