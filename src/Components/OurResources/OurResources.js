@@ -80,7 +80,7 @@ const OurResources = () => {
                                 style={{ fontSize: "100px" }}
                             />
                         </h2>
-                        <p className='text-4xl font-bold text-center'>Blood Donars</p>
+                        <p className='text-4xl font-bold text-center'>Blood Donors</p>
                     </div>
                 </div>
                 <div className="card shadow-xl image-full">

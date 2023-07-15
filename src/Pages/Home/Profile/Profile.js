@@ -114,7 +114,7 @@ const Profile = () => {
 							<hr></hr>
 							<p className="mb-5 text-xl font-bold">
 								{
-									(userProfile?.status) === 'admin' ? "✓ Admin | ✓ User" : "✓ User | ✗ Admin"
+									(userProfile?.status) === 'admin' ? "✓ Admin | ✓ User" : "✓ User"
 								}
 							</p>
 							<p className='text-2xl font-bold italic my-2 text-[#0E7490]'>Change Password</p>

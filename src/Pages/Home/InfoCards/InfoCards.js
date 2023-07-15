@@ -22,7 +22,7 @@ const InfoCards = () => {
         },
         {
             id: 3,
-            name: 'Contuct US',
+            name: 'Contact US',
             description: '+880 1839-432144 smartmedicare@gmail.com',
             icon: phone,
             bgClass: 'bg-gradient-to-r from-secondary to-[#0E7490] text-white'

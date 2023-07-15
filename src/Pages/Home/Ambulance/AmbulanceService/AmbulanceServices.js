@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
-import { useLoaderData, useParams } from 'react-router';
+import { useLocation } from 'react-router';
 import AmbulanceService from './AmbulanceService';
+import { Link } from 'react-router-dom';
+import { BsArrowRightCircleFill } from 'react-icons/bs';
 
 const AmbulanceServices = () => {
+    const { pathname } = useLocation();
     const [ambulance, setAmbulance] = useState([]);
     useEffect(() => {
         fetch('./ambulance.json')
@@ -19,6 +21,20 @@ const AmbulanceServices = () => {
                 {
                     ambulance.map((item, index) => <AmbulanceService item={item} key={index}></AmbulanceService>)
                 }
+            </div>
+
+            <div className='flex items-center justify-end'  >
+                <div className='flex items-center justify-end'  >
+                    {
+                        pathname === '/'
+                        &&
+                        <Link to='/ambulance/show-up' className='text-center' >
+                            <button className='flex items-center'>
+                                <>SEE MORE </><BsArrowRightCircleFill />
+                            </button>
+                        </Link>
+                    }
+                </div>
             </div>
         </div>
     );

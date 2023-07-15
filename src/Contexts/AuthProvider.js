@@ -8,7 +8,8 @@ import {
 	updateProfile,
 	signOut,
 	signInWithEmailAndPassword,
-	sendPasswordResetEmail
+	sendPasswordResetEmail,
+	sendEmailVerification
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -39,8 +40,12 @@ const AuthProvider = ({ children }) => {
 
 	// reset password or change password
 	const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email);
-    }
+		return sendPasswordResetEmail(auth, email);
+	}
+
+	const emailVerification = () => {
+		return sendEmailVerification(auth.currentUser);
+	}
 
 	//  user are running here 
 	useEffect(() => {
@@ -79,6 +84,7 @@ const AuthProvider = ({ children }) => {
 		state,
 		dispatch,
 		isLoading,
+		emailVerification,
 		logOut,
 		signIn,
 		userProfile
