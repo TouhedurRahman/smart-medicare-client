@@ -76,7 +76,12 @@ const Login = () => {
                 </div>
             }
             <form onSubmit={handleOnSubmit} className="forms">
-                <h1 className='text-white text-2xl font-bold mb-5'>Please Login</h1>
+                <div className="avatar">
+                    <div className="w-24">
+                        <img src="https://i.ibb.co/0DB9ShG/353180776-280132654408557-2731333325529638173-n.png" alt='loading...' />
+                    </div>
+                </div>
+                <h1 className='text-white text-2xl font-bold mb-5'>Login</h1>
                 <input
                     type="email"
                     placeholder="Email"
