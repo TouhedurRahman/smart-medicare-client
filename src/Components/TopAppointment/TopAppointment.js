@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 
 const TopAppointment = () => {
 	const [data, setData] = useState([]);
+	const [chartWidth, setChartWidth] = useState(1350);
 
 	useEffect(() => {
 		axios.get("http://localhost:5000/api/v1/doctor")
@@ -12,6 +13,21 @@ const TopAppointment = () => {
 				setData(response?.data?.result.slice(0, 10));
 			})
 			.catch(error => { })
+	}, []);
+
+	useEffect(() => {
+		const handleResize = () => {
+			const breakpoint = 768;
+			const newWidth = window.innerWidth >= breakpoint ? 1350 : window.innerWidth - 40;
+			setChartWidth(newWidth);
+		};
+		window.addEventListener('resize', handleResize);
+
+		handleResize();
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	}, []);
 
 	return (
@@ -25,7 +41,7 @@ const TopAppointment = () => {
 			</div>
 			<div className='grid justify-center align-center'>
 				<BarChart
-					width={1350}
+					width={chartWidth}
 					height={300}
 					data={data}
 					margin={{
@@ -39,7 +55,6 @@ const TopAppointment = () => {
 					<XAxis dataKey="name" />
 					<YAxis />
 					<Tooltip />
-					<Legend />
 					<Bar dataKey="viewCount" fill="#82ca9d" />
 				</BarChart>
 			</div>

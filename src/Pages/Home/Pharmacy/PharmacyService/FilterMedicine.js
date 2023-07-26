@@ -12,7 +12,7 @@ const FilterMedicine = (props) => {
     return (
         <div>
             <div className='mx-auto'>
-                <div className='flex justify-between'>
+                <div className='lg:flex lg:justify-between'>
                     <button
                         onClick={() => window.location.reload()}
                         className='medicine-btn hover-underline-animation bg-[#0E7490]'
